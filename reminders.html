@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Medicine Reminders – Hospital Finder</title>
+  <link rel="stylesheet" href="css/shared.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .rem-wrap{max-width:1100px;margin:0 auto;padding:32px 2rem 64px;display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start;}
+    .card{background:var(--white);border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;}
+    .card-head{padding:20px 24px;border-bottom:1px solid var(--border);}
+    .card-title{font-family:var(--font-display);font-weight:800;font-size:1rem;margin-bottom:4px;}
+    .card-sub{font-size:0.78rem;color:var(--muted);}
+    .card-body{padding:24px;}
+    /* REMINDER ITEMS */
+    .rem-section-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+    .rem-item{display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg);border-radius:var(--radius-sm);margin-bottom:10px;border:1.5px solid var(--border);transition:all var(--t);}
+    .rem-item.done{opacity:0.5;}
+    .rem-item.done .rem-name{text-decoration:line-through;}
+    .rem-check-btn{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;cursor:pointer;display:grid;place-items:center;transition:all var(--t);background:var(--white);}
+    .rem-check-btn.checked{background:var(--green);border-color:var(--green);color:white;font-size:0.75rem;font-weight:700;}
+    .rem-pill-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;}
+    .rem-info{flex:1;}
+    .rem-name{font-weight:700;font-size:0.9rem;}
+    .rem-meta{font-size:0.75rem;color:var(--muted);margin-top:3px;}
+    .rem-badge{font-size:0.68rem;padding:2px 8px;border-radius:50px;font-weight:700;flex-shrink:0;}
+    .badge-morning{background:#fef3c7;color:#92400e;}
+    .badge-afternoon{background:#fff7ed;color:#c2410c;}
+    .badge-evening{background:var(--blue-pale);color:var(--blue);}
+    .badge-night{background:#f5f3ff;color:#6d28d9;}
+    .del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.9rem;transition:color var(--t);padding:4px;}
+    .del-btn:hover{color:var(--red);}
+    /* SCHEDULE DISPLAY */
+    .schedule-row{display:grid;grid-template-columns:80px 1fr;gap:0;margin-bottom:8px;}
+    .sch-time{font-size:0.75rem;color:var(--muted);font-weight:600;padding-top:12px;border-right:2px solid var(--border);padding-right:14px;text-align:right;}
+    .sch-pills{padding:4px 0 8px 14px;display:flex;flex-direction:column;gap:6px;}
+    .sch-pill{background:var(--blue-pale);border-radius:8px;padding:8px 12px;font-size:0.82rem;font-weight:600;color:var(--blue-dark);display:flex;align-items:center;gap:8px;border:1px solid rgba(29,78,216,0.12);}
+    .sch-pill-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+    /* PROGRESS */
+    .progress-wrap{margin-bottom:24px;}
+    .progress-label{display:flex;justify-content:space-between;font-size:0.82rem;font-weight:600;margin-bottom:8px;}
+    .progress-bar{height:10px;background:var(--border);border-radius:50px;overflow:hidden;}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--green),#4ade80);border-radius:50px;transition:width 0.5s ease;}
+    @media(max-width:800px){.rem-wrap{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo"><div class="logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="health_tracker.html">Health</a></li>
+      <li><a href="emergency.html" class="nav-emg">🚨 Emergency</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h2>💊 Medicine Reminders</h2>
+    <p>Never miss a dose. Manage your medication schedule smartly and stay on track.</p>
+  </div>
+</section>
+
+<div class="rem-wrap">
+  <!-- ADD REMINDER FORM -->
+  <div class="card">
+    <div class="card-head"><div class="card-title">➕ Add New Reminder</div><div class="card-sub">Set up your medication schedule</div></div>
+    <div class="card-body">
+      <div class="form-group"><label class="form-label">Medicine Name</label><input class="form-input" type="text" id="med-name" placeholder="e.g. Metformin 500mg"/></div>
+      <div class="form-group"><label class="form-label">Dosage</label><input class="form-input" type="text" id="med-dose" placeholder="e.g. 1 tablet, 5ml syrup"/></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Time of Day</label>
+          <select class="form-input" id="med-time">
+            <option value="morning">🌅 Morning (8:00 AM)</option>
+            <option value="afternoon">☀️ Afternoon (1:00 PM)</option>
+            <option value="evening">🌆 Evening (6:00 PM)</option>
+            <option value="night">🌙 Night (10:00 PM)</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Frequency</label>
+          <select class="form-input" id="med-freq">
+            <option>Daily</option><option>Every other day</option><option>Weekly</option><option>As needed</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label class="form-label">Notes (optional)</label><input class="form-input" type="text" id="med-notes" placeholder="e.g. Take with food, after meals"/></div>
+      <div class="form-group"><label class="form-label">Start Date</label><input class="form-input" type="date" id="med-date"/></div>
+      <button class="form-btn form-btn-blue" onclick="addReminder()"><i class="fas fa-bell"></i> Set Reminder</button>
+    </div>
+
+    <!-- DAILY PROGRESS -->
+    <div class="card-body" style="border-top:1px solid var(--border);padding-top:20px;">
+      <div class="card-title" style="margin-bottom:16px">📊 Today's Progress</div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Medicines Taken</span><span id="prog-text">1 / 3</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:33%"></div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;">
+        <div style="background:#dcfce7;border-radius:10px;padding:10px;"><div style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--green)" id="count-done">1</div><div style="font-size:0.72rem;color:var(--muted)">Taken</div></div>
+        <div style="background:#fef3c7;border-radius:10px;padding:10px;"><div style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:#92400e" id="count-pending">2</div><div style="font-size:0.72rem;color:var(--muted)">Pending</div></div>
+        <div style="background:var(--blue-pale);border-radius:10px;padding:10px;"><div style="font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--blue)" id="count-total">3</div><div style="font-size:0.72rem;color:var(--muted)">Total</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REMINDER LIST + SCHEDULE -->
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="card">
+      <div class="card-head"><div class="card-title">🗓️ Today's Schedule</div></div>
+      <div class="card-body" id="reminder-list">
+        <div class="rem-section-label">🌅 Morning</div>
+        <div class="rem-item" id="rem-0">
+          <div class="rem-check-btn" onclick="toggleRem(0,this)"></div>
+          <div class="rem-pill-icon" style="background:#fef3c7">💊</div>
+          <div class="rem-info"><div class="rem-name">Metformin 500mg</div><div class="rem-meta">1 tablet · 8:00 AM · Take with food</div></div>
+          <span class="rem-badge badge-morning">Morning</span>
+          <button class="del-btn" onclick="deleteRem('rem-0')"><i class="fas fa-trash"></i></button>
+        </div>
+        <div class="rem-section-label">☀️ Afternoon</div>
+        <div class="rem-item" id="rem-1">
+          <div class="rem-check-btn" onclick="toggleRem(1,this)"></div>
+          <div class="rem-pill-icon" style="background:var(--blue-pale)">💊</div>
+          <div class="rem-info"><div class="rem-name">Vitamin D3 Capsule</div><div class="rem-meta">1 capsule · 1:00 PM</div></div>
+          <span class="rem-badge badge-afternoon">Afternoon</span>
+          <button class="del-btn" onclick="deleteRem('rem-1')"><i class="fas fa-trash"></i></button>
+        </div>
+        <div class="rem-section-label">🌙 Night</div>
+        <div class="rem-item" id="rem-2">
+          <div class="rem-check-btn" onclick="toggleRem(2,this)"></div>
+          <div class="rem-pill-icon" style="background:#f5f3ff">💊</div>
+          <div class="rem-info"><div class="rem-name">Omega-3 Fish Oil</div><div class="rem-meta">2 capsules · 10:00 PM · After dinner</div></div>
+          <span class="rem-badge badge-night">Night</span>
+          <button class="del-btn" onclick="deleteRem('rem-2')"><i class="fas fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKLY SCHEDULE -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">📋 Weekly Schedule View</div></div>
+      <div class="card-body">
+        <div class="schedule-row"><div class="sch-time">8:00 AM</div><div class="sch-pills"><div class="sch-pill"><div class="sch-pill-dot"></div>Metformin 500mg – Daily</div></div></div>
+        <div class="schedule-row"><div class="sch-time">1:00 PM</div><div class="sch-pills"><div class="sch-pill"><div class="sch-pill-dot"></div>Vitamin D3 – Daily</div></div></div>
+        <div class="schedule-row"><div class="sch-time">10:00 PM</div><div class="sch-pills"><div class="sch-pill"><div class="sch-pill-dot"></div>Omega-3 – Daily</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
+<footer><p>© 2026 <span>HospitalFinder</span> · Never miss a dose</p></footer>
+
+<script>
+document.getElementById('med-date').min=new Date().toISOString().split('T')[0];
+let done=1,total=3;
+function updateProgress(){
+  const pct=Math.round((done/total)*100);
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-text').textContent=done+' / '+total;
+  document.getElementById('count-done').textContent=done;
+  document.getElementById('count-pending').textContent=total-done;
+  document.getElementById('count-total').textContent=total;
+}
+function toggleRem(idx,btn){
+  const item=document.getElementById('rem-'+idx);
+  const checked=btn.classList.toggle('checked');
+  btn.textContent=checked?'✓':'';
+  item.classList.toggle('done',checked);
+  done=checked?done+1:done-1;
+  updateProgress();
+}
+function deleteRem(id){
+  const el=document.getElementById(id);
+  if(el){el.style.opacity='0';el.style.transform='translateX(20px)';el.style.transition='all 0.3s';setTimeout(()=>el.remove(),300);total--;updateProgress();}
+}
+let remCount=3;
+function addReminder(){
+  const name=document.getElementById('med-name').value.trim();
+  if(!name){alert('Please enter medicine name.');return;}
+  const dose=document.getElementById('med-dose').value||'As prescribed';
+  const time=document.getElementById('med-time');
+  const notes=document.getElementById('med-notes').value;
+  const timeLabels={morning:'🌅 Morning · 8:00 AM',afternoon:'☀️ Afternoon · 1:00 PM',evening:'🌆 Evening · 6:00 PM',night:'🌙 Night · 10:00 PM'};
+  const badgeMap={morning:'badge-morning',afternoon:'badge-afternoon',evening:'badge-evening',night:'badge-night'};
+  const id='rem-'+remCount++;
+  const div=document.createElement('div');
+  div.className='rem-item';div.id=id;
+  div.innerHTML=`<div class="rem-check-btn" onclick="toggleRem('${id}',this)"></div><div class="rem-pill-icon" style="background:var(--blue-pale)">💊</div><div class="rem-info"><div class="rem-name">${name} – ${dose}</div><div class="rem-meta">${timeLabels[time.value]}${notes?' · '+notes:''}</div></div><span class="rem-badge ${badgeMap[time.value]}">${time.options[time.selectedIndex].text.split(' ')[1]}</span><button class="del-btn" onclick="deleteRem('${id}')"><i class="fas fa-trash"></i></button>`;
+  document.getElementById('reminder-list').appendChild(div);
+  total++;updateProgress();
+  ['med-name','med-dose','med-notes'].forEach(i=>document.getElementById(i).value='');
+  const btn=document.querySelector('.form-btn-blue');
+  btn.innerHTML='<i class="fas fa-check"></i> Reminder Set!';
+  btn.style.background='linear-gradient(135deg,#15803d,#16a34a)';
+  setTimeout(()=>{btn.innerHTML='<i class="fas fa-bell"></i> Set Reminder';btn.style.background='';},2000);
+}
+</script>
+</body>
+</html>

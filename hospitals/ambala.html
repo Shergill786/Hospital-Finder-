@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambala Hospitals – Hospital Finder</title>
+  <link rel="stylesheet" href="css/hospitals.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header role="banner">
+  <nav>
+    <div class="logo"><div class="logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../dashboard.html">Dashboard</a></li>
+      <li><a href="../emergency.html" class="nav-emergency">🚨 Emergency</a></li>
+      <li><a href="../contact_us.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero" aria-label="City header">
+  <div class="page-hero-inner">
+    <div class="city-breadcrumb"><i class="fas fa-home" style="font-size:0.75rem"></i> Home &rsaquo; Ambala</div>
+    <h2>🏙️ Hospitals in Ambala</h2>
+    <p>Trusted hospitals in the city of Ambala</p>
+    <div class="city-stats-row">
+      <div class="city-stat"><div class="city-stat-icon">🏥</div><div><div class="city-stat-num">8</div><div class="city-stat-label">Hospitals</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🛏️</div><div><div class="city-stat-num">5000+</div><div class="city-stat-label">Total Beds</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🚨</div><div><div class="city-stat-num">24×7</div><div class="city-stat-label">Emergency</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-strip">
+  <div class="filter-strip-inner">
+    <div class="fs-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search hospital name or speciality…" oninput="filterCards()" />
+    </div>
+    <button class="fs-tag active" onclick="filterType(this,'all')">All</button>
+    <button class="fs-tag" onclick="filterType(this,'cardiac')">Cardiac</button>
+    <button class="fs-tag" onclick="filterType(this,'government')">Govt</button>
+    <button class="fs-tag" onclick="filterType(this,'multi')">Multi-Spec</button>
+    <span class="fs-count" id="cardCount">8 Hospitals</span>
+  </div>
+</div>
+
+<section class="hospital-grid" id="hospitalGrid" aria-label="Ambala hospitals">
+
+  <div class="hospital-card" id="h1" data-name="civil hospital ambala" data-type="government hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Civil Hospital Ambala</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Model Town</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2530303</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">600</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">150</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">30</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_civil.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h2" data-name="vohra hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Vohra Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Nicholson Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2550023</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">120</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">35</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">10</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_vohra.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h3" data-name="mk hospital" data-type="general hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">MK Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> General Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ambala City</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2532100</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">100</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">28</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">8</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_mk.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h4" data-name="amrit hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">💚</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Amrit Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ambala Cantt</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2644000</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">150</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">40</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">12</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_amrit.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h5" data-name="guardian hospital" data-type="general hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Guardian Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> General Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ambala City</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2565200</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">80</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">22</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">6</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_guardian.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h6" data-name="nandra hospital" data-type="ortho & general">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Nandra Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Ortho & General</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ambala Cantt</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2640900</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">90</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">25</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">7</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_nandra.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h7" data-name="cl all hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">CL ALL Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ambala City</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2580100</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">110</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">30</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">9</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_clall.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h8" data-name="rotary hospital" data-type="community hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🔄</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Rotary Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Community Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Nicholson Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">0171-2554400</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">75</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">20</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">5</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="ambala/details_ambala.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="ambala/doctors_rotary.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+</section>
+
+<a href="../emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
+
+<footer><p>© 2026 <span>HospitalFinder</span> | Ambala</p></footer>
+
+<script>
+function filterCards() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const match = c.dataset.name.includes(q) || c.dataset.type.includes(q);
+    c.classList.toggle('hidden', !match);
+    if (match) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+function filterType(btn, type) {
+  document.querySelectorAll('.fs-tag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const show = type === 'all' || c.dataset.type.includes(type);
+    c.classList.toggle('hidden', !show);
+    if (show) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+</script>
+</body>
+</html>

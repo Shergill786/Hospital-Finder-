@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIIMS New Delhi – Doctors | Hospital Finder</title>
+  <link rel="stylesheet" href="css/details.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header role="banner">
+  <nav>
+    <div class="nav-logo"><div class="nav-logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="../delhi.html"><i class="fas fa-arrow-left"></i> Hospitals</a></li>
+      <li><a href="appointment.html" style="color:var(--blue);background:var(--blue-pale);border-radius:8px;padding:7px 14px;font-weight:600;">📅 Book Appointment</a></li>
+      <li><a href="../../dashboard.html">Dashboard</a></li>
+      <li><a href="../../emergency.html" class="nav-emg">🚨 Emergency</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-title">
+  <h2>AIIMS New Delhi – Our Doctors</h2>
+  <p>Qualified specialists available for consultation, OPD and appointments</p>
+</section>
+
+<!-- FILTER BAR -->
+<div style="background:var(--white);border-bottom:1px solid var(--border);padding:16px 24px;">
+  <div style="max-width:1200px;margin:auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+    <div style="flex:1;min-width:200px;position:relative;">
+      <i class="fas fa-search" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:0.85rem;"></i>
+      <input type="text" id="docSearch" placeholder="Search doctor or specialization…" oninput="filterDocs()"
+        style="width:100%;padding:10px 14px 10px 36px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:0.88rem;font-family:var(--font-body);outline:none;transition:border-color var(--t);" />
+    </div>
+    <button class="ftag active" onclick="filterSpec(this,'all')">All</button>
+    <button class="ftag" onclick="filterSpec(this,'cardiology')">Cardiology</button>
+    <button class="ftag" onclick="filterSpec(this,'neurology')">Neurology</button>
+    <button class="ftag" onclick="filterSpec(this,'orthopedics')">Orthopedics</button>
+    <button class="ftag" onclick="filterSpec(this,'pediatrics')">Pediatrics</button>
+    <span id="doc-count" style="margin-left:auto;font-size:0.82rem;color:var(--muted);">10 Doctors</span>
+  </div>
+</div>
+
+<style>
+.ftag{padding:8px 16px;border-radius:50px;font-size:0.8rem;font-weight:600;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all 0.25s ease;font-family:var(--font-body);}
+.ftag:hover,.ftag.active{background:var(--blue);color:white;border-color:var(--blue);}
+.doctor-card.hidden{display:none;}
+</style>
+
+<section class="doctor-list" id="docGrid">
+
+  <div class="doctor-card" data-spec="cardiology" data-name="rajiv narang">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">❤️</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Rajiv Narang</div>
+        <span class="dc-spec-badge">Cardiology</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">22</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.7</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">2K+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MD, DM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Mon–Fri, 9–1 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★★</span>
+      <span class="dc-rating-text">4.7 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="neurology" data-name="manjari tripathi">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">🧠</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Manjari Tripathi</div>
+        <span class="dc-spec-badge">Neurology</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">18</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.5</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">1.5K+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MD, DM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Mon–Sat, 10–2 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★½</span>
+      <span class="dc-rating-text">4.5 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="radiology" data-name="sanjiv sharma">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">🔬</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Sanjiv Sharma</div>
+        <span class="dc-spec-badge">Radiology</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">15</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.3</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">1K+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MD</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Tue–Sat, 11–3 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★☆</span>
+      <span class="dc-rating-text">4.3 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="pediatrics" data-name="ritu malhotra">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">👶</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Ritu Malhotra</div>
+        <span class="dc-spec-badge">Pediatrics</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">12</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.2</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">900+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MD</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Mon–Fri, 9–12 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★☆</span>
+      <span class="dc-rating-text">4.2 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="orthopedics" data-name="karan gupta">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">🦴</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Karan Gupta</div>
+        <span class="dc-spec-badge">Orthopedics</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">14</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.4</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">1.2K+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MS Ortho</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Mon–Sat, 10–2 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★☆</span>
+      <span class="dc-rating-text">4.4 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="dermatology" data-name="neha sood">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">🌿</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Neha Sood</div>
+        <span class="dc-spec-badge">Dermatology</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">9</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.1</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">700+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MD</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Tue–Sat, 2–5 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★☆</span>
+      <span class="dc-rating-text">4.1 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="surgery" data-name="rohit mehra">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">⚕️</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Rohit Mehra</div>
+        <span class="dc-spec-badge">General Surgery</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">17</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.6</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">1.8K+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MS</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Mon–Fri, 1–4 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★★</span>
+      <span class="dc-rating-text">4.6 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="gynecology" data-name="anjali verma">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">👩‍⚕️</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Anjali Verma</div>
+        <span class="dc-spec-badge">Gynecology</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">13</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.3</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">1.1K+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MS</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Mon–Sat, 11–3 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★☆</span>
+      <span class="dc-rating-text">4.3 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="psychiatry" data-name="amit khanna">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">🧘</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Amit Khanna</div>
+        <span class="dc-spec-badge">Psychiatry</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">16</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.4</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">850+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MD</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">Mon–Fri, 12–4 PM</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★☆</span>
+      <span class="dc-rating-text">4.4 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+  <div class="doctor-card" data-spec="anesthesiology" data-name="sneha arora">
+    <div class="dc-top"></div>
+    <div class="dc-profile">
+      <div class="dc-avatar-wrap">
+        <div class="dc-avatar">💉</div>
+        <div class="dc-available-dot"></div>
+      </div>
+      <div class="dc-meta">
+        <div class="dc-name">Dr. Sneha Arora</div>
+        <span class="dc-spec-badge">Anesthesiology</span>
+        <div class="dc-hospital-tag"><i class="fas fa-hospital" style="font-size:0.7rem;color:var(--blue)"></i> AIIMS New Delhi</div>
+      </div>
+    </div>
+    <div class="dc-stats">
+      <div class="dc-stat"><div class="dc-stat-num">11</div><div class="dc-stat-label">Years Exp</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">4.5</div><div class="dc-stat-label">Rating</div></div>
+      <div class="dc-stat"><div class="dc-stat-num">600+</div><div class="dc-stat-label">Patients</div></div>
+    </div>
+    <div class="dc-body">
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-graduation-cap"></i></div><span class="dc-info-label">Qualification</span><span class="dc-info-val">MBBS, MD</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-clock"></i></div><span class="dc-info-label">OPD Timings</span><span class="dc-info-val">On Call / Pre-Op</span></div>
+      <div class="dc-info-row"><div class="dc-info-icon"><i class="fas fa-language"></i></div><span class="dc-info-label">Languages</span><span class="dc-info-val">Hindi, English</span></div>
+    </div>
+    <div class="dc-rating-row">
+      <span class="dc-stars">★★★★½</span>
+      <span class="dc-rating-text">4.5 / 5.0</span>
+      <span class="dc-status">Available Today</span>
+    </div>
+    <div class="dc-footer"><a href="appointment.html" class="book-btn"><i class="fas fa-calendar-check"></i> Book Appointment</a></div>
+  </div>
+
+</section>
+
+<a href="../../emergency.html" class="floating-emergency">🚨 Emergency</a>
+<footer><p>© 2026 <span>HospitalFinder</span> | AIIMS New Delhi</p></footer>
+
+<script>
+function filterDocs() {
+  const q = document.getElementById('docSearch').value.toLowerCase();
+  const cards = document.querySelectorAll('.doctor-card');
+  let count = 0;
+  cards.forEach(c => {
+    const name = c.dataset.name || '';
+    const spec = c.dataset.spec || '';
+    const show = name.includes(q) || spec.includes(q);
+    c.classList.toggle('hidden', !show);
+    if (show) count++;
+  });
+  document.getElementById('doc-count').textContent = count + ' Doctor' + (count !== 1 ? 's' : '');
+}
+
+function filterSpec(btn, spec) {
+  document.querySelectorAll('.ftag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('.doctor-card');
+  let count = 0;
+  cards.forEach(c => {
+    const show = spec === 'all' || c.dataset.spec === spec;
+    c.classList.toggle('hidden', !show);
+    if (show) count++;
+  });
+  document.getElementById('doc-count').textContent = count + ' Doctor' + (count !== 1 ? 's' : '');
+  document.getElementById('docSearch').value = '';
+}
+</script>
+</body>
+</html>

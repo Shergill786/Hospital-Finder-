@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergency Request</title>
+    <link rel="stylesheet" href="css/emergency.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Back Button -->
+<div class="back-btn">
+    <a href="javascript:history.back()">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+</div>
+
+<section class="emergency-section">
+    <div class="emergency-container">
+
+        <h2>🚨 Emergency Medical Request</h2>
+        <p>Please fill this form only in case of a medical emergency.</p>
+
+        <form>
+
+            <!-- Emergency Type -->
+            <h3>Emergency Details</h3>
+
+            <div class="input-box">
+                <label>Type of Emergency</label>
+                <select required>
+                    <option value="">Select Emergency</option>
+                    <option>Accident / Trauma</option>
+                    <option>Heart Attack</option>
+                    <option>Breathing Difficulty</option>
+                    <option>Stroke</option>
+                    <option>Burn Injury</option>
+                    <option>Pregnancy Emergency</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <!-- Patient Details -->
+            <h3>Patient Information</h3>
+
+            <div class="row">
+                <div class="input-box">
+                    <label>Patient Name</label>
+                    <input type="text" required>
+                </div>
+
+                <div class="input-box">
+                    <label>Age</label>
+                    <input type="number" min="0" max="120" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-box">
+                    <label>Contact Number</label>
+                    <input type="tel" required>
+                </div>
+
+                <div class="input-box">
+                    <label>Alternate Contact</label>
+                    <input type="tel">
+                </div>
+            </div>
+
+            <!-- Location -->
+            <h3>Emergency Location</h3>
+
+            <div class="input-box">
+                <label>Current Location / Address</label>
+                <input type="text" required placeholder="Area, City, Landmark">
+            </div>
+
+            <!-- Priority -->
+            <div class="radio-box">
+                <label>Emergency Priority</label>
+                <div class="options">
+                    <label><input type="radio" name="priority" required> Critical</label>
+                    <label><input type="radio" name="priority"> Serious</label>
+                    <label><input type="radio" name="priority"> Moderate</label>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="input-box">
+                <label>Brief Description</label>
+                <textarea rows="4" required placeholder="Describe the emergency condition"></textarea>
+            </div>
+
+            <button type="submit">
+                <i class="fas fa-ambulance"></i> Request Emergency Help
+            </button>
+
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

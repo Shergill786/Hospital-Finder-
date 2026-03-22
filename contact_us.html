@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Hospital Finder</title>
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<div class="back-btn"><a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Back</a></div>
+
+<section class="contact-section" role="main">
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <div class="contact-info-brand">
+        <div class="ci-logo"><div class="ci-logo-icon">🏥</div> HospitalFinder</div>
+        <h2>Hospital Contact Information</h2>
+        <p>Trusted healthcare services and support available 24×7. Reach us for appointments, queries, or service requests.</p>
+      </div>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="info-text-label">Phone</div>
+            <div class="info-text-val">+91 98765 43210</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="info-text-label">Email</div>
+            <div class="info-text-val">support@hospitalfinder.com</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="info-text-label">Emergency Services</div>
+            <div class="info-text-val">24×7 Available</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="info-text-label">Coverage</div>
+            <div class="info-text-val">8 Major Cities in India</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-info-footer">© 2026 HospitalFinder. Committed to accessible healthcare.</div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Hospital Service Request</h2>
+      <p class="form-sub">Fill the form below and our team will get back to you shortly.</p>
+      <form onsubmit="handleContact(event)" novalidate>
+        <div class="form-row">
+          <div class="input-box">
+            <label for="c-name">Patient Name</label>
+            <input type="text" id="c-name" placeholder="Enter full name" required />
+          </div>
+          <div class="input-box">
+            <label for="c-phone">Mobile Number</label>
+            <input type="tel" id="c-phone" placeholder="+91 XXXXX XXXXX" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-box">
+            <label for="c-email">Email (Optional)</label>
+            <input type="email" id="c-email" placeholder="email@example.com" />
+          </div>
+          <div class="input-box">
+            <label for="c-location">Your City / Area / Pincode</label>
+            <input type="text" id="c-location" placeholder="e.g. Karol Bagh, Delhi" required />
+          </div>
+        </div>
+        <div class="input-box">
+          <label for="c-service">Required Hospital Service</label>
+          <select id="c-service" required>
+            <option value="">-- Select Service --</option>
+            <option>OPD Consultation</option>
+            <option>Emergency Care</option>
+            <option>ICU / Critical Care</option>
+            <option>Ambulance Service</option>
+            <option>Laboratory Tests</option>
+            <option>Radiology (X-Ray / CT / MRI)</option>
+            <option>Pharmacy</option>
+            <option>Health Checkup</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label for="c-issue">Describe Health Issue / Requirement</label>
+          <textarea id="c-issue" rows="4" placeholder="Please describe your medical needs or queries..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Request</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<a href="emergency.html" class="floating-emergency">🚨 Emergency</a>
+
+<script>
+function handleContact(e) {
+  e.preventDefault();
+  const name = document.getElementById('c-name').value.trim();
+  if (!name) { alert('Please enter your name.'); return; }
+  document.querySelector('.submit-btn').innerHTML = '<i class="fas fa-check"></i> Request Submitted!';
+  document.querySelector('.submit-btn').style.background = 'linear-gradient(135deg,#15803d,#16a34a)';
+  setTimeout(() => alert('✅ Your request has been submitted. We will contact you within 24 hours.'), 200);
+}
+</script>
+</body>
+</html>

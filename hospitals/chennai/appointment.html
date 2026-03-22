@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment – Hospital Finder</title>
+  <link rel="stylesheet" href="css/appointment.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="nav-logo"><div class="nav-logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Back</a></li>
+      <li><a href="../../emergency.html" class="nav-emg">🚨 Emergency</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="appt-page-wrap">
+
+  <!-- LEFT: Info Panel -->
+  <aside class="appt-info-panel">
+    <div class="aip-logo">📅</div>
+    <h2>Book Your Appointment</h2>
+    <p>Fill in your details and we will confirm your appointment within 2 hours.</p>
+
+    <div class="aip-steps">
+      <div class="aip-step active"><div class="aip-step-num">1</div><div class="aip-step-label">Personal Details</div></div>
+      <div class="aip-step"><div class="aip-step-num">2</div><div class="aip-step-label">Select Hospital &amp; Dept</div></div>
+      <div class="aip-step"><div class="aip-step-num">3</div><div class="aip-step-label">Choose Date &amp; Time</div></div>
+      <div class="aip-step"><div class="aip-step-num">4</div><div class="aip-step-label">Confirm Booking</div></div>
+    </div>
+
+    <div class="aip-info-boxes">
+      <div class="aip-info-box"><i class="fas fa-clock"></i><div><div class="aib-label">Confirmation Time</div><div class="aib-val">Within 2 hours</div></div></div>
+      <div class="aip-info-box"><i class="fas fa-phone"></i><div><div class="aib-label">Support</div><div class="aib-val">+91 98765 43210</div></div></div>
+      <div class="aip-info-box"><i class="fas fa-shield-alt"></i><div><div class="aib-label">Data</div><div class="aib-val">100% Secure &amp; Private</div></div></div>
+    </div>
+  </aside>
+
+  <!-- RIGHT: Form -->
+  <main class="appt-form-panel">
+    <div class="appt-form-card">
+
+      <div class="form-section-head"><span class="fsh-icon">👤</span> Personal Details</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-name"><i class="fas fa-user"></i> Full Name</label>
+          <input type="text" id="f-name" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="f-phone"><i class="fas fa-phone"></i> Phone Number</label>
+          <input type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-email"><i class="fas fa-envelope"></i> Email Address</label>
+          <input type="email" id="f-email" placeholder="email@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="f-age"><i class="fas fa-calendar"></i> Age</label>
+          <input type="number" id="f-age" placeholder="Your age" min="1" max="120" />
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+      <div class="form-section-head"><span class="fsh-icon">🏥</span> Hospital &amp; Department</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-city"><i class="fas fa-city"></i> Select City</label>
+          <select id="f-city" required>
+            <option value="">-- Select City --</option>
+            <option>Delhi</option><option>Mumbai</option><option>Kolkata</option>
+            <option>Chennai</option><option>Bengaluru</option><option>Pune</option>
+            <option>Ambala</option><option>Chandigarh</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-hospital"><i class="fas fa-hospital"></i> Select Hospital</label>
+          <select id="f-hospital" required>
+            <option value="">-- Select Hospital --</option>
+            <option>AIIMS</option><option>Apollo Hospital</option><option>Max Hospital</option>
+            <option>Fortis Hospital</option><option>Sir Ganga Ram Hospital</option>
+            <option>Safdarjung Hospital</option><option>Medanta</option><option>BLK Super Speciality</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-dept"><i class="fas fa-stethoscope"></i> Department</label>
+          <select id="f-dept" required>
+            <option value="">-- Select Department --</option>
+            <option>Cardiology</option><option>Neurology</option><option>Orthopedics</option>
+            <option>Pediatrics</option><option>General Medicine</option><option>Oncology</option>
+            <option>Dermatology</option><option>Gynecology</option><option>Psychiatry</option>
+            <option>Radiology</option><option>General Surgery</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="f-type"><i class="fas fa-tag"></i> Visit Type</label>
+          <select id="f-type">
+            <option>OPD Consultation</option><option>Emergency</option>
+            <option>Follow-up</option><option>Lab Test</option><option>Radiology</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+      <div class="form-section-head"><span class="fsh-icon">📅</span> Date &amp; Time</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-date"><i class="fas fa-calendar-alt"></i> Preferred Date</label>
+          <input type="date" id="f-date" required />
+        </div>
+        <div class="form-group">
+          <label for="f-time"><i class="fas fa-clock"></i> Preferred Time</label>
+          <select id="f-time" required>
+            <option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option>
+            <option>12:00 PM</option><option>2:00 PM</option><option>3:00 PM</option>
+            <option>4:00 PM</option><option>5:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="f-desc"><i class="fas fa-notes-medical"></i> Problem Description</label>
+        <textarea id="f-desc" rows="4" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+      </div>
+
+      <button class="appt-submit-btn" onclick="handleAppt(event)">
+        <i class="fas fa-calendar-check"></i> Confirm Appointment
+      </button>
+
+      <p class="form-note"><i class="fas fa-lock"></i> Your information is secure and will never be shared.</p>
+    </div>
+  </main>
+
+</div>
+
+<a href="../../emergency.html" class="floating-emergency">🚨 Emergency</a>
+
+<footer><p>© 2026 <span>HospitalFinder</span> | Book with confidence</p></footer>
+
+<script>
+  // Set min date to today
+  const dateInput = document.getElementById("f-date");
+  if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
+
+  function handleAppt(e) {
+    e.preventDefault();
+    const name = document.getElementById("f-name").value.trim();
+    const phone = document.getElementById("f-phone").value.trim();
+    const city = document.getElementById("f-city").value;
+    const hosp = document.getElementById("f-hospital").value;
+    const date = document.getElementById("f-date").value;
+    if (!name || !phone || !city || !hosp || !date) {
+      alert("Please fill all required fields.");
+      return;
+    }
+    const btn = document.querySelector(".appt-submit-btn");
+    btn.innerHTML = "<i class=\"fas fa-check-circle\"></i> Appointment Confirmed!";
+    btn.style.background = "linear-gradient(135deg,#15803d,#16a34a)";
+    btn.disabled = true;
+    setTimeout(() => {
+      alert("✅ Your appointment has been confirmed!
+
+📍 Hospital: " + hosp + "
+📅 Date: " + date + "
+
+We will call you at " + phone + " to confirm.");
+    }, 300);
+  }
+</script>
+</body>
+</html>

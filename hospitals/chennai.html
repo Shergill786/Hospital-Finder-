@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chennai Hospitals – Hospital Finder</title>
+  <link rel="stylesheet" href="css/hospitals.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header role="banner">
+  <nav>
+    <div class="logo"><div class="logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../dashboard.html">Dashboard</a></li>
+      <li><a href="../emergency.html" class="nav-emergency">🚨 Emergency</a></li>
+      <li><a href="../contact_us.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero" aria-label="City header">
+  <div class="page-hero-inner">
+    <div class="city-breadcrumb"><i class="fas fa-home" style="font-size:0.75rem"></i> Home &rsaquo; Chennai</div>
+    <h2>🌴 Hospitals in Chennai</h2>
+    <p>Top hospitals in the Healthcare Capital of India</p>
+    <div class="city-stats-row">
+      <div class="city-stat"><div class="city-stat-icon">🏥</div><div><div class="city-stat-num">8</div><div class="city-stat-label">Hospitals</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🛏️</div><div><div class="city-stat-num">5000+</div><div class="city-stat-label">Total Beds</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🚨</div><div><div class="city-stat-num">24×7</div><div class="city-stat-label">Emergency</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-strip">
+  <div class="filter-strip-inner">
+    <div class="fs-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search hospital name or speciality…" oninput="filterCards()" />
+    </div>
+    <button class="fs-tag active" onclick="filterType(this,'all')">All</button>
+    <button class="fs-tag" onclick="filterType(this,'cardiac')">Cardiac</button>
+    <button class="fs-tag" onclick="filterType(this,'government')">Govt</button>
+    <button class="fs-tag" onclick="filterType(this,'multi')">Multi-Spec</button>
+    <span class="fs-count" id="cardCount">8 Hospitals</span>
+  </div>
+</div>
+
+<section class="hospital-grid" id="hospitalGrid" aria-label="Chennai hospitals">
+
+  <div class="hospital-card" id="h1" data-name="apollo hospitals chennai" data-type="cardiac & multi-spec">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">❤️</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Apollo Hospitals Chennai</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac & Multi-Spec</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Greams Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-28290200</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">650</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">170</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">42</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_apollo.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h2" data-name="fortis malar hospital" data-type="cardiac speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Fortis Malar Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Adyar</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-42896000</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">180</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">50</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">15</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_fortis.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h3" data-name="miot international" data-type="orthopedics & trauma">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">MIOT International</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Orthopedics & Trauma</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Trauma</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Manapakkam</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-42002288</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1000</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">260</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">55</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_miot.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h4" data-name="sri ramachandra hospital" data-type="teaching hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🎓</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Sri Ramachandra Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Teaching Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Porur</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-45928500</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1600</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">380</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">70</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_shri.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h5" data-name="sims hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">SIMS Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Vadapalani</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-43888888</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">400</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">100</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">28</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_sims.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h6" data-name="global health city" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🌐</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Global Health City</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Perumbakkam</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-44777777</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1000</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">250</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">50</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_global.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h7" data-name="govt. stanley hospital" data-type="government hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Govt. Stanley Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Old Jail Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-25281201</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1700</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">400</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">70</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_stanley.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h8" data-name="vijaya hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Vijaya Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">NS Patel Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">044-24809100</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">250</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">65</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">18</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="chennai/details_chennai.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="chennai/doctors_vijaya.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+</section>
+
+<a href="../emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
+
+<footer><p>© 2026 <span>HospitalFinder</span> | Chennai</p></footer>
+
+<script>
+function filterCards() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const match = c.dataset.name.includes(q) || c.dataset.type.includes(q);
+    c.classList.toggle('hidden', !match);
+    if (match) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+function filterType(btn, type) {
+  document.querySelectorAll('.fs-tag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const show = type === 'all' || c.dataset.type.includes(type);
+    c.classList.toggle('hidden', !show);
+    if (show) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+</script>
+</body>
+</html>

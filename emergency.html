@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Request – Hospital Finder</title>
+  <link rel="stylesheet" href="css/emergency.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div class="back-btn">
+  <a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Back</a>
+</div>
+
+<section class="emergency-section" role="main">
+  <div class="emergency-container">
+
+    <div class="emg-header">
+      <div class="emg-header-icon">🚨</div>
+      <div class="emg-header-text">
+        <h2>Emergency Medical Request</h2>
+        <p>Please fill this form only in case of a medical emergency. Help is on the way.</p>
+      </div>
+    </div>
+
+    <!-- Quick Hotlines -->
+    <div class="hotlines" role="list" aria-label="Emergency hotlines">
+      <div class="hotline-item" role="listitem" onclick="window.location.href='tel:112'">
+        <div class="hotline-num">112</div>
+        <div class="hotline-label">National Emergency</div>
+      </div>
+      <div class="hotline-item" role="listitem" onclick="window.location.href='tel:102'">
+        <div class="hotline-num">102</div>
+        <div class="hotline-label">Ambulance</div>
+      </div>
+      <div class="hotline-item" role="listitem" onclick="window.location.href='tel:108'">
+        <div class="hotline-num">108</div>
+        <div class="hotline-label">Medical Helpline</div>
+      </div>
+    </div>
+
+    <div class="emg-body">
+      <form onsubmit="handleEmergencySubmit(event)" novalidate>
+
+        <div class="form-section-title">Emergency Details</div>
+        <div class="input-box">
+          <label for="emg-type">Type of Emergency</label>
+          <select id="emg-type" required aria-required="true">
+            <option value="">Select Emergency Type</option>
+            <option>Accident / Trauma</option>
+            <option>Heart Attack</option>
+            <option>Stroke</option>
+            <option>Burn Injury</option>
+            <option>Pregnancy Emergency</option>
+            <option>Respiratory Distress</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-section-title">Patient Information</div>
+        <div class="row">
+          <div class="input-box">
+            <label for="p-name">Patient Name</label>
+            <input type="text" id="p-name" placeholder="Full name" required aria-required="true" />
+          </div>
+          <div class="input-box">
+            <label for="p-age">Age</label>
+            <input type="number" id="p-age" min="0" max="120" placeholder="Age" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-box">
+            <label for="p-contact">Contact Number</label>
+            <input type="tel" id="p-contact" placeholder="+91 XXXXX XXXXX" required />
+          </div>
+          <div class="input-box">
+            <label for="p-alt">Alternate Contact</label>
+            <input type="tel" id="p-alt" placeholder="Optional" />
+          </div>
+        </div>
+
+        <div class="form-section-title">Emergency Location</div>
+        <div class="input-box">
+          <label for="p-location">Current Location / Address</label>
+          <input type="text" id="p-location" placeholder="Area, City, Landmark near you" required />
+        </div>
+
+        <div class="radio-box">
+          <label>Emergency Priority</label>
+          <div class="options">
+            <label><input type="radio" name="priority" value="critical" required /> 🔴 Critical</label>
+            <label><input type="radio" name="priority" value="serious" /> 🟠 Serious</label>
+            <label><input type="radio" name="priority" value="moderate" /> 🟡 Moderate</label>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label for="p-desc">Brief Description</label>
+          <textarea id="p-desc" rows="4" placeholder="Describe the emergency condition in detail..." required></textarea>
+        </div>
+
+        <button type="submit" class="emg-submit-btn" aria-label="Request emergency help">
+          <i class="fas fa-ambulance"></i> Request Emergency Help Now
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+function handleEmergencySubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('p-name').value.trim();
+  const type = document.getElementById('emg-type').value;
+  const loc = document.getElementById('p-location').value.trim();
+  if (!name || !type || !loc) {
+    alert('Please fill all required fields.');
+    return;
+  }
+  document.querySelector('.emg-submit-btn').innerHTML = '<i class="fas fa-check"></i> Emergency Request Sent!';
+  document.querySelector('.emg-submit-btn').style.background = 'linear-gradient(135deg,#15803d,#16a34a)';
+  setTimeout(() => alert('✅ Your emergency request has been submitted. Help is being dispatched. Please call 112 immediately if critical.'), 200);
+}
+</script>
+</body>
+</html>

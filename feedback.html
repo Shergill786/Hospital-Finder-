@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Feedback – Hospital Finder</title>
+  <link rel="stylesheet" href="css/feedback.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<div class="back-btn"><a href="javascript:history.back()"><i class="fas fa-arrow-left"></i> Back</a></div>
+<section class="feedback-section" role="main">
+  <div class="feedback-container">
+    <div class="fb-header">
+      <h2>⭐ Patient Feedback Form</h2>
+      <p>Your feedback helps us improve healthcare services for everyone.</p>
+    </div>
+    <div class="fb-body">
+      <form onsubmit="handleFeedback(event)" novalidate>
+        <div class="form-section-title">Patient Information</div>
+        <div class="row">
+          <div class="input-box"><label>Patient Name</label><input type="text" placeholder="Full name" required /></div>
+          <div class="input-box"><label>Mobile Number</label><input type="tel" placeholder="+91 XXXXX XXXXX" required /></div>
+        </div>
+        <div class="row">
+          <div class="input-box"><label>Email (Optional)</label><input type="email" placeholder="email@example.com" /></div>
+          <div class="input-box"><label>Age</label><input type="number" min="1" max="120" placeholder="Your age" required /></div>
+        </div>
+
+        <div class="form-section-title">Visit Details</div>
+        <div class="row">
+          <div class="input-box"><label>Date of Visit</label><input type="date" required /></div>
+          <div class="input-box"><label>Service Used</label>
+            <select required>
+              <option value="">Select service</option>
+              <option>OPD Consultation</option><option>Emergency Care</option>
+              <option>Inpatient / Ward</option><option>ICU</option>
+              <option>Lab Tests</option><option>Radiology</option>
+              <option>Pharmacy</option><option>Ambulance</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-box"><label>Doctor / Department Name</label><input type="text" placeholder="e.g. Dr. Sharma, Cardiology" /></div>
+
+        <div class="form-section-title">Service Ratings</div>
+        <div class="rating-box"><label>Doctor Care</label><select><option>Excellent ⭐⭐⭐⭐⭐</option><option>Good ⭐⭐⭐⭐</option><option>Average ⭐⭐⭐</option><option>Poor ⭐</option></select></div>
+        <div class="rating-box"><label>Nursing & Staff</label><select><option>Excellent ⭐⭐⭐⭐⭐</option><option>Good ⭐⭐⭐⭐</option><option>Average ⭐⭐⭐</option><option>Poor ⭐</option></select></div>
+        <div class="rating-box"><label>Cleanliness & Hygiene</label><select><option>Excellent ⭐⭐⭐⭐⭐</option><option>Good ⭐⭐⭐⭐</option><option>Average ⭐⭐⭐</option><option>Poor ⭐</option></select></div>
+        <div class="rating-box"><label>Waiting Time</label><select><option>Very Short</option><option>Acceptable</option><option>Long</option><option>Very Long</option></select></div>
+
+        <div class="form-section-title">Overall Experience</div>
+        <div class="radio-box"><label>Overall Satisfaction</label>
+          <div class="options">
+            <label><input type="radio" name="sat" required /> 😍 Very Satisfied</label>
+            <label><input type="radio" name="sat" /> 😊 Satisfied</label>
+            <label><input type="radio" name="sat" /> 😐 Neutral</label>
+            <label><input type="radio" name="sat" /> 😞 Unsatisfied</label>
+          </div>
+        </div>
+        <div class="radio-box"><label>Would you recommend our hospital?</label>
+          <div class="options">
+            <label><input type="radio" name="rec" required /> 👍 Yes</label>
+            <label><input type="radio" name="rec" /> 👎 No</label>
+          </div>
+        </div>
+        <div class="input-box"><label>Suggestions / Complaints</label><textarea rows="4" placeholder="Share any suggestions, compliments or complaints..."></textarea></div>
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+function handleFeedback(e) {
+  e.preventDefault();
+  document.querySelector('.submit-btn').innerHTML = '<i class="fas fa-check"></i> Feedback Submitted!';
+  document.querySelector('.submit-btn').style.background = 'linear-gradient(135deg,#15803d,#16a34a)';
+  setTimeout(() => alert('✅ Thank you for your feedback! It helps us improve healthcare services.'), 200);
+}
+</script>
+</body>
+</html>

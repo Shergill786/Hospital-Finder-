@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mumbai Hospitals – Hospital Finder</title>
+  <link rel="stylesheet" href="css/hospitals.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header role="banner">
+  <nav>
+    <div class="logo"><div class="logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../dashboard.html">Dashboard</a></li>
+      <li><a href="../emergency.html" class="nav-emergency">🚨 Emergency</a></li>
+      <li><a href="../contact_us.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero" aria-label="City header">
+  <div class="page-hero-inner">
+    <div class="city-breadcrumb"><i class="fas fa-home" style="font-size:0.75rem"></i> Home &rsaquo; Mumbai</div>
+    <h2>🌊 Hospitals in Mumbai</h2>
+    <p>Premium hospitals along India's financial capital</p>
+    <div class="city-stats-row">
+      <div class="city-stat"><div class="city-stat-icon">🏥</div><div><div class="city-stat-num">8</div><div class="city-stat-label">Hospitals</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🛏️</div><div><div class="city-stat-num">5000+</div><div class="city-stat-label">Total Beds</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🚨</div><div><div class="city-stat-num">24×7</div><div class="city-stat-label">Emergency</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-strip">
+  <div class="filter-strip-inner">
+    <div class="fs-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search hospital name or speciality…" oninput="filterCards()" />
+    </div>
+    <button class="fs-tag active" onclick="filterType(this,'all')">All</button>
+    <button class="fs-tag" onclick="filterType(this,'cardiac')">Cardiac</button>
+    <button class="fs-tag" onclick="filterType(this,'government')">Govt</button>
+    <button class="fs-tag" onclick="filterType(this,'multi')">Multi-Spec</button>
+    <span class="fs-count" id="cardCount">8 Hospitals</span>
+  </div>
+</div>
+
+<section class="hospital-grid" id="hospitalGrid" aria-label="Mumbai hospitals">
+
+  <div class="hospital-card" id="h1" data-name="kokilaben dhirubhai ambani" data-type="super speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">⭐</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Kokilaben Dhirubhai Ambani</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Super Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Andheri West</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-30999999</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">750</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">200</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">50</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_koki.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h2" data-name="hinduja hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Hinduja Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Mahim</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-24452222</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">90</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">25</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_hinduja.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h3" data-name="jaslok hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Jaslok Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Peddar Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-66573333</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">340</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">85</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">22</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_jaslok.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h4" data-name="lilavati hospital" data-type="cardiac & neuro">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">💙</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Lilavati Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac & Neuro</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Bandra West</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-26751000</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">323</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">80</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">20</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_lilavita.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h5" data-name="nanavati hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Nanavati Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Vile Parle</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-26100100</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">90</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">22</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_nanvati.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h6" data-name="tata memorial hospital" data-type="cancer speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🎗️</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Tata Memorial Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cancer Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Oncology Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Parel</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-24177000</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">629</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">150</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">35</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_tata.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h7" data-name="sion hospital" data-type="government hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Sion Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Sion</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-24076381</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1800</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">380</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">65</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_sion.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h8" data-name="bombay hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Bombay Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Marine Lines</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-22067676</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">450</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">100</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">28</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="mumbai/details_mumbai.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="mumbai/doctors_bombay.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+</section>
+
+<a href="../emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
+
+<footer><p>© 2026 <span>HospitalFinder</span> | Mumbai</p></footer>
+
+<script>
+function filterCards() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const match = c.dataset.name.includes(q) || c.dataset.type.includes(q);
+    c.classList.toggle('hidden', !match);
+    if (match) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+function filterType(btn, type) {
+  document.querySelectorAll('.fs-tag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const show = type === 'all' || c.dataset.type.includes(type);
+    c.classList.toggle('hidden', !show);
+    if (show) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+</script>
+</body>
+</html>

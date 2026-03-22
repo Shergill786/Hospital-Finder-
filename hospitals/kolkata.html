@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolkata Hospitals – Hospital Finder</title>
+  <link rel="stylesheet" href="css/hospitals.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header role="banner">
+  <nav>
+    <div class="logo"><div class="logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../dashboard.html">Dashboard</a></li>
+      <li><a href="../emergency.html" class="nav-emergency">🚨 Emergency</a></li>
+      <li><a href="../contact_us.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero" aria-label="City header">
+  <div class="page-hero-inner">
+    <div class="city-breadcrumb"><i class="fas fa-home" style="font-size:0.75rem"></i> Home &rsaquo; Kolkata</div>
+    <h2>🌉 Hospitals in Kolkata</h2>
+    <p>Leading hospitals in the City of Joy</p>
+    <div class="city-stats-row">
+      <div class="city-stat"><div class="city-stat-icon">🏥</div><div><div class="city-stat-num">8</div><div class="city-stat-label">Hospitals</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🛏️</div><div><div class="city-stat-num">5000+</div><div class="city-stat-label">Total Beds</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🚨</div><div><div class="city-stat-num">24×7</div><div class="city-stat-label">Emergency</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-strip">
+  <div class="filter-strip-inner">
+    <div class="fs-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search hospital name or speciality…" oninput="filterCards()" />
+    </div>
+    <button class="fs-tag active" onclick="filterType(this,'all')">All</button>
+    <button class="fs-tag" onclick="filterType(this,'cardiac')">Cardiac</button>
+    <button class="fs-tag" onclick="filterType(this,'government')">Govt</button>
+    <button class="fs-tag" onclick="filterType(this,'multi')">Multi-Spec</button>
+    <span class="fs-count" id="cardCount">8 Hospitals</span>
+  </div>
+</div>
+
+<section class="hospital-grid" id="hospitalGrid" aria-label="Kolkata hospitals">
+
+  <div class="hospital-card" id="h1" data-name="amri hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">AMRI Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Dhakuria</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-65006500</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">90</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">22</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_amri.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h2" data-name="apollo gleneagles" data-type="cardiac & neuro">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">❤️</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Apollo Gleneagles</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac & Neuro</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Canal Circular Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-23201800</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">400</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">100</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">28</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_apollo.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h3" data-name="fortis hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Fortis Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Anandapur</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-66284444</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">400</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">105</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">25</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_fortis.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h4" data-name="medica superspecialty" data-type="super speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Medica Superspecialty</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Super Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Mukundapur</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-40404040</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">400</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">100</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">25</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_medica.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h5" data-name="sskm hospital" data-type="government medical">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">SSKM Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Medical</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">AJC Bose Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-22041740</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">2000</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">420</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">75</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_sskm.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h6" data-name="peerless hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Peerless Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Beliaghata</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-44011000</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">300</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">75</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">18</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_peerles.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h7" data-name="ruby general hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">💎</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Ruby General Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Kasba</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-39882222</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">200</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">55</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">14</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_ruby.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h8" data-name="cmc kolkata" data-type="mission hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">✝️</div>
+      <div class="hc-title-block">
+        <div class="hc-name">CMC Kolkata</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Mission Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Narkeldanga</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">033-23606030</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">600</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">150</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">35</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="kolkata/details_kolkata.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="kolkata/doctors_cmi.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+</section>
+
+<a href="../emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
+
+<footer><p>© 2026 <span>HospitalFinder</span> | Kolkata</p></footer>
+
+<script>
+function filterCards() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const match = c.dataset.name.includes(q) || c.dataset.type.includes(q);
+    c.classList.toggle('hidden', !match);
+    if (match) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+function filterType(btn, type) {
+  document.querySelectorAll('.fs-tag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const show = type === 'all' || c.dataset.type.includes(type);
+    c.classList.toggle('hidden', !show);
+    if (show) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+</script>
+</body>
+</html>

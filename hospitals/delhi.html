@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delhi Hospitals – Hospital Finder</title>
+  <link rel="stylesheet" href="css/hospitals.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<header role="banner">
+  <nav>
+    <div class="logo"><div class="logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../dashboard.html">Dashboard</a></li>
+      <li><a href="../emergency.html" class="nav-emergency">🚨 Emergency</a></li>
+      <li><a href="../contact_us.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero" aria-label="City header">
+  <div class="page-hero-inner">
+    <div class="city-breadcrumb"><i class="fas fa-home" style="font-size:0.75rem"></i> Home &rsaquo; Delhi</div>
+    <h2>🏛️ Hospitals in Delhi</h2>
+    <p>Top government and private hospitals with 24×7 care</p>
+    <div class="city-stats-row">
+      <div class="city-stat"><div class="city-stat-icon">🏥</div><div><div class="city-stat-num">8</div><div class="city-stat-label">Hospitals</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🛏️</div><div><div class="city-stat-num">5000+</div><div class="city-stat-label">Total Beds</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🚨</div><div><div class="city-stat-num">24×7</div><div class="city-stat-label">Emergency</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-strip">
+  <div class="filter-strip-inner">
+    <div class="fs-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search hospital name or speciality…" oninput="filterCards()" />
+    </div>
+    <button class="fs-tag active" onclick="filterType(this,'all')">All</button>
+    <button class="fs-tag" onclick="filterType(this,'cardiac')">Cardiac</button>
+    <button class="fs-tag" onclick="filterType(this,'government')">Govt</button>
+    <button class="fs-tag" onclick="filterType(this,'multi')">Multi-Spec</button>
+    <span class="fs-count" id="cardCount">8 Hospitals</span>
+  </div>
+</div>
+
+<section class="hospital-grid" id="hospitalGrid" aria-label="Delhi hospitals">
+
+  <div class="hospital-card" id="h1" data-name="aiims new delhi" data-type="premier institute">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏛️</div>
+      <div class="hc-title-block">
+        <div class="hc-name">AIIMS New Delhi</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Premier Institute</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Trauma</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ansari Nagar</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26588500</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">2500</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">420</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">80</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_aiims.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h2" data-name="indraprastha apollo" data-type="cardiac & neurology">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">❤️</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Indraprastha Apollo</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac & Neurology</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Sarita Vihar</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26925858</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">700</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">150</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">40</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_apollo.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h3" data-name="max super speciality" data-type="oncology & neurology">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Max Super Speciality</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Oncology & Neurology</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 ICU Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Saket</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26515050</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">500</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">110</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">30</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_max.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h4" data-name="fortis escorts heart" data-type="cardiac institute">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">💓</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Fortis Escorts Heart</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac Institute</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Cardiac Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Okhla Road</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26825000</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">310</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">80</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">25</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_fortis.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h5" data-name="sir ganga ram hospital" data-type="multi-speciality">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Sir Ganga Ram Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Rajinder Nagar</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-25750000</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">675</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">140</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">35</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_ganga.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h6" data-name="safdarjung hospital" data-type="government hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Safdarjung Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ansari Nagar West</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26707444</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1600</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">300</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">60</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_safdar.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h7" data-name="dr. rml hospital" data-type="government hospital">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Dr. RML Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Baba Kharak Singh Marg</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-23365525</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1400</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">250</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">50</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_lnjp.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+
+  <div class="hospital-card" id="h8" data-name="lok nayak hospital" data-type="trauma & surgery">
+    <div class="hc-accent"></div>
+    <div class="hc-header">
+      <div class="hc-icon-wrap">🏥</div>
+      <div class="hc-title-block">
+        <div class="hc-name">Lok Nayak Hospital</div>
+        <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Trauma & Surgery</span>
+        <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+      </div>
+    </div>
+    <div class="hc-info">
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Jawaharlal Nehru Marg</span></div>
+      <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-23232400</span></div>
+    </div>
+    <div class="hc-beds">
+      <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">2000</div><div class="hc-bed-label">Total Beds</div></div>
+      <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Available</div></div>
+      <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">70</div><div class="hc-bed-label">ICU</div></div>
+    </div>
+    <div class="hc-footer">
+      <a href="delhi/details_delhi.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+      <a href="delhi/doctors_lnjp.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+    </div>
+  </div>
+</section>
+
+<a href="../emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
+
+<footer><p>© 2026 <span>HospitalFinder</span> | Delhi</p></footer>
+
+<script>
+function filterCards() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const match = c.dataset.name.includes(q) || c.dataset.type.includes(q);
+    c.classList.toggle('hidden', !match);
+    if (match) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+function filterType(btn, type) {
+  document.querySelectorAll('.fs-tag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const show = type === 'all' || c.dataset.type.includes(type);
+    c.classList.toggle('hidden', !show);
+    if (show) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+</script>
+</body>
+</html>

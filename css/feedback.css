@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+:root{
+  --blue:#1d4ed8;--blue-dark:#1e3a8a;--blue-pale:#eff6ff;--purple:#7c3aed;
+  --text:#1e293b;--muted:#64748b;--border:#e2e8f0;--white:#fff;
+  --radius:16px;--radius-sm:10px;--font-display:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--transition:0.3s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font-body);background:linear-gradient(135deg,#f3e8ff,#ede9fe,#e0f2fe);min-height:100vh;padding:40px 16px 80px;}
+a{text-decoration:none;color:inherit;}button{cursor:pointer;font-family:var(--font-body);}
+.back-btn{position:fixed;top:20px;left:20px;z-index:99;}
+.back-btn a{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:9px 18px;border-radius:50px;font-size:0.85rem;font-weight:600;box-shadow:0 4px 14px rgba(29,78,216,0.3);transition:all var(--transition);}
+.back-btn a:hover{background:var(--blue-dark);transform:translateY(-2px);}
+.feedback-section{max-width:760px;margin:0 auto;}
+.feedback-container{background:var(--white);border-radius:var(--radius);box-shadow:0 24px 60px rgba(0,0,0,0.12);overflow:hidden;}
+.fb-header{background:linear-gradient(135deg,var(--purple),var(--blue));color:white;padding:36px 40px;text-align:center;}
+.fb-header h2{font-family:var(--font-display);font-size:1.7rem;font-weight:800;margin-bottom:8px;}
+.fb-header p{opacity:0.85;font-size:0.92rem;}
+.fb-body{padding:36px 40px;}
+.form-section-title{font-family:var(--font-display);font-size:0.82rem;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:0.8px;margin:24px 0 14px;display:flex;align-items:center;gap:8px;}
+.form-section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.form-section-title:first-child{margin-top:0;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.input-box{margin-bottom:16px;}
+.input-box label{display:block;font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:7px;}
+.input-box input,
+.input-box select,
+.input-box textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:0.92rem;font-family:var(--font-body);color:var(--text);background:var(--white);outline:none;transition:all var(--transition);}
+.input-box input:focus,.input-box select:focus,.input-box textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(124,58,237,0.08);}
+.rating-box{margin-bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;}
+.rating-box label{font-size:0.85rem;font-weight:600;color:var(--text);}
+.rating-box select{padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:var(--font-body);font-size:0.88rem;color:var(--text);outline:none;transition:border-color var(--transition);}
+.rating-box select:focus{border-color:var(--purple);}
+.radio-box{margin-bottom:18px;}
+.radio-box>label{display:block;font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:10px;}
+.options{display:flex;gap:10px;flex-wrap:wrap;}
+.options label{background:var(--blue-pale);color:var(--blue-dark);padding:7px 14px;border-radius:50px;cursor:pointer;font-size:0.82rem;font-weight:500;border:1.5px solid rgba(29,78,216,0.15);display:flex;align-items:center;gap:6px;transition:all var(--transition);}
+.options label:has(input:checked){background:var(--blue);color:white;border-color:var(--blue);}
+.options input[type="radio"]{accent-color:var(--blue);}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--purple),var(--blue));color:white;border:none;padding:15px;border-radius:var(--radius-sm);font-weight:700;font-size:0.95rem;box-shadow:0 8px 24px rgba(124,58,237,0.3);transition:all var(--transition);display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px;}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(124,58,237,0.4);}
+@media(max-width:640px){.fb-header,.fb-body{padding:24px 20px;}.row{grid-template-columns:1fr;}.rating-box{grid-template-columns:1fr;}.back-btn{position:relative;top:auto;left:auto;margin-bottom:16px;display:inline-block;}}
