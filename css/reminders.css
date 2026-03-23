@@ -1,38 +1,246 @@
 <style>
-    .rem-wrap{max-width:1100px;margin:0 auto;padding:32px 2rem 64px;display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start;}
-    .card{background:var(--white);border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);overflow:hidden;}
-    .card-head{padding:20px 24px;border-bottom:1px solid var(--border);}
-    .card-title{font-family:var(--font-display);font-weight:800;font-size:1rem;margin-bottom:4px;}
-    .card-sub{font-size:0.78rem;color:var(--muted);}
-    .card-body{padding:24px;}
-    /* REMINDER ITEMS */
-    .rem-section-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);font-weight:700;margin:18px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
-    .rem-item{display:flex;align-items:center;gap:14px;padding:14px;background:var(--bg);border-radius:var(--radius-sm);margin-bottom:10px;border:1.5px solid var(--border);transition:all var(--t);}
-    .rem-item.done{opacity:0.5;}
-    .rem-item.done .rem-name{text-decoration:line-through;}
-    .rem-check-btn{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;cursor:pointer;display:grid;place-items:center;transition:all var(--t);background:var(--white);}
-    .rem-check-btn.checked{background:var(--green);border-color:var(--green);color:white;font-size:0.75rem;font-weight:700;}
-    .rem-pill-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem;flex-shrink:0;}
-    .rem-info{flex:1;}
-    .rem-name{font-weight:700;font-size:0.9rem;}
-    .rem-meta{font-size:0.75rem;color:var(--muted);margin-top:3px;}
-    .rem-badge{font-size:0.68rem;padding:2px 8px;border-radius:50px;font-weight:700;flex-shrink:0;}
-    .badge-morning{background:#fef3c7;color:#92400e;}
-    .badge-afternoon{background:#fff7ed;color:#c2410c;}
-    .badge-evening{background:var(--blue-pale);color:var(--blue);}
-    .badge-night{background:#f5f3ff;color:#6d28d9;}
-    .del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:0.9rem;transition:color var(--t);padding:4px;}
-    .del-btn:hover{color:var(--red);}
-    /* SCHEDULE DISPLAY */
-    .schedule-row{display:grid;grid-template-columns:80px 1fr;gap:0;margin-bottom:8px;}
-    .sch-time{font-size:0.75rem;color:var(--muted);font-weight:600;padding-top:12px;border-right:2px solid var(--border);padding-right:14px;text-align:right;}
-    .sch-pills{padding:4px 0 8px 14px;display:flex;flex-direction:column;gap:6px;}
-    .sch-pill{background:var(--blue-pale);border-radius:8px;padding:8px 12px;font-size:0.82rem;font-weight:600;color:var(--blue-dark);display:flex;align-items:center;gap:8px;border:1px solid rgba(29,78,216,0.12);}
-    .sch-pill-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;}
-    /* PROGRESS */
-    .progress-wrap{margin-bottom:24px;}
-    .progress-label{display:flex;justify-content:space-between;font-size:0.82rem;font-weight:600;margin-bottom:8px;}
-    .progress-bar{height:10px;background:var(--border);border-radius:50px;overflow:hidden;}
-    .progress-fill{height:100%;background:linear-gradient(90deg,var(--green),#4ade80);border-radius:50px;transition:width 0.5s ease;}
-    @media(max-width:800px){.rem-wrap{grid-template-columns:1fr;}}
-  </style>
+/* ================= REMINDERS WRAPPER ================= */
+.rem-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 2rem 64px;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ================= CARD COMPONENTS ================= */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-head {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.card-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* ================= REMINDER ITEMS ================= */
+.rem-section-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  font-weight: 700;
+  margin: 18px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.rem-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  border: 1.5px solid var(--border);
+  transition: all var(--transition);
+}
+
+.rem-item.done {
+  opacity: 0.5;
+}
+
+.rem-item.done .rem-name {
+  text-decoration: line-through;
+}
+
+/* ================= REMINDER CHECKBOX ================= */
+.rem-check-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all var(--transition);
+  background: var(--white);
+}
+
+.rem-check-btn.checked {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ================= REMINDER PILL ICON ================= */
+.rem-pill-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.rem-info {
+  flex: 1;
+}
+
+.rem-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.rem-meta {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* ================= REMINDER BADGE ================= */
+.rem-badge {
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 50px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.badge-morning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-afternoon {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.badge-evening {
+  background: var(--blue-pale);
+  color: var(--blue);
+}
+
+.badge-night {
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+
+/* ================= DELETE BUTTON ================= */
+.del-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color var(--transition);
+  padding: 4px;
+}
+
+.del-btn:hover {
+  color: var(--red);
+}
+
+/* ================= SCHEDULE DISPLAY ================= */
+.schedule-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0;
+  margin-bottom: 8px;
+}
+
+.sch-time {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 600;
+  padding-top: 12px;
+  border-right: 2px solid var(--border);
+  padding-right: 14px;
+  text-align: right;
+}
+
+.sch-pills {
+  padding: 4px 0 8px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sch-pill {
+  background: var(--blue-pale);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(29, 78, 216, 0.12);
+}
+
+.sch-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+/* ================= PROGRESS SECTION ================= */
+.progress-wrap {
+  margin-bottom: 24px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: var(--border);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green), #4ade80);
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 800px) {
+  .rem-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

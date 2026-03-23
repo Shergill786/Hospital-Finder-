@@ -1,19 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
-:root {
-  --blue:#1d4ed8; --blue-dark:#1e3a8a; --blue-light:#3b82f6; --blue-pale:#eff6ff;
-  --red:#dc2626; --green:#16a34a; --yellow:#f59e0b; --purple:#7c3aed;
-  --text:#1e293b; --muted:#64748b; --border:#e2e8f0; --white:#fff; --bg:#f8fafc;
-  --radius:16px; --radius-sm:10px;
-  --shadow:0 4px 24px rgba(30,58,138,0.10); --shadow-lg:0 16px 48px rgba(30,58,138,0.16);
-  --font-display:'Syne',sans-serif; --font-body:'DM Sans',sans-serif;
-  --t:0.3s cubic-bezier(0.4,0,0.2,1);
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;}
-a{text-decoration:none;color:inherit;} button{cursor:pointer;font-family:var(--font-body);}
 
-/* ── NAV ── */
+/* ===================== CSS VARIABLES ===================== */
+:root {
+  --blue: #1d4ed8;
+  --blue-dark: #1e3a8a;
+  --blue-light: #3b82f6;
+  --blue-pale: #eff6ff;
+  --red: #dc2626;
+  --green: #16a34a;
+  --yellow: #f59e0b;
+  --purple: #7c3aed;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --white: #fff;
+  --bg: #f8fafc;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 4px 24px rgba(30, 58, 138, 0.10);
+  --shadow-lg: 0 16px 48px rgba(30, 58, 138, 0.16);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --t: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===================== RESET & BASE STYLES ===================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+/* ===================== NAVIGATION HEADER ===================== */
 header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(30,58,138,0.08);}
 nav{max-width:1200px;margin:auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:68px;}
 .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:1.25rem;color:var(--blue-dark);}

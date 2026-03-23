@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Hospitals – Hospital Finder</title>
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .city-section {
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    .city-section:last-child {
+      border-bottom: none;
+    }
+    .city-section-title {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #1a5490;
+      padding-left: 15px;
+      border-left: 5px solid #4a90e2;
+    }
+    .hospitals-count {
+      display: inline-block;
+      margin-left: 15px;
+      background: #e3f2fd;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #1a5490;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<header role="banner">
+  <nav>
+    <div class="logo"><div class="logo-icon">🏥</div>Hospital<span>Finder</span></div>
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="emergency.html" class="nav-emergency">🚨 Emergency</a></li>
+      <li><a href="contact_us.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero" aria-label="All hospitals header">
+  <div class="page-hero-inner">
+    <div class="city-breadcrumb"><i class="fas fa-home" style="font-size:0.75rem"></i> Home &rsaquo; All Hospitals</div>
+    <h2>🏥 All Hospitals Across India</h2>
+    <p>Complete directory of premium hospitals in major Indian cities</p>
+    <div class="city-stats-row">
+      <div class="city-stat"><div class="city-stat-icon">🏥</div><div><div class="city-stat-num">64</div><div class="city-stat-label">Total Hospitals</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🌆</div><div><div class="city-stat-num">8</div><div class="city-stat-label">Cities Covered</div></div></div>
+      <div class="city-stat"><div class="city-stat-icon">🛏️</div><div><div class="city-stat-num">40,000+</div><div class="city-stat-label">Total Beds</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-strip">
+  <div class="filter-strip-inner">
+    <div class="fs-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search hospital name, city, or speciality…" oninput="filterCards()" />
+    </div>
+    <button class="fs-tag active" onclick="filterType(this,'all')">All</button>
+    <button class="fs-tag" onclick="filterType(this,'cardiac')">Cardiac</button>
+    <button class="fs-tag" onclick="filterType(this,'government')">Govt</button>
+    <button class="fs-tag" onclick="filterType(this,'multi')">Multi-Spec</button>
+    <span class="fs-count" id="cardCount">64 Hospitals</span>
+  </div>
+</div>
+
+<!-- MUMBAI SECTION -->
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🌊 Mumbai <span class="hospitals-count">8 Hospitals</span></h3>
+    <div class="hospital-grid" aria-label="Mumbai hospitals">
+      <div class="hospital-card" data-name="kokilaben dhirubhai ambani mumbai" data-type="super speciality" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">⭐</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Kokilaben Dhirubhai Ambani</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Super Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Andheri West</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-30999999</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">750</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">200</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">50</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_koki.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="hinduja hospital mumbai" data-type="multi-speciality" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Hinduja Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Mahim</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-24452222</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">90</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">25</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_hinduja.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="jaslok hospital mumbai" data-type="multi-speciality" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Jaslok Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Peddar Road</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-66573333</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">340</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">85</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">22</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_jaslok.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="lilavati hospital mumbai cardiac" data-type="cardiac & neuro" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">💙</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Lilavati Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac & Neuro</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Bandra West</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-26751000</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">323</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">80</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">20</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_lilavita.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="nanavati hospital mumbai" data-type="multi-speciality" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Nanavati Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Vile Parle</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-26100100</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">90</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">22</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_nanvati.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="tata memorial hospital mumbai cancer" data-type="cancer speciality" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🎗️</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Tata Memorial Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cancer Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Oncology Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Parel</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-24177000</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">629</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">150</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">35</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_tata.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="sion hospital mumbai government" data-type="government hospital" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Sion Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Sion</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-24076381</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1800</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">380</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">65</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_sion.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="bombay hospital mumbai" data-type="multi-speciality" data-city="mumbai">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Bombay Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Marine Lines</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">022-22067676</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">450</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">100</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">28</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/mumbai/details_mumbai.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/mumbai/doctors_bombay.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELHI SECTION -->
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🏛️ Delhi <span class="hospitals-count">8 Hospitals</span></h3>
+    <div class="hospital-grid" aria-label="Delhi hospitals">
+      <div class="hospital-card" data-name="aiims new delhi premier" data-type="premier institute" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏛️</div>
+          <div class="hc-title-block">
+            <div class="hc-name">AIIMS New Delhi</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Premier Institute</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Trauma</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ansari Nagar</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26588500</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">2500</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">420</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">80</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_aiims.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="indraprastha apollo delhi cardiac" data-type="cardiac & neurology" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">❤️</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Indraprastha Apollo</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac & Neurology</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Sarita Vihar</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26925858</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">700</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">150</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">40</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_apollo.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="max super speciality delhi oncology" data-type="oncology & neurology" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Max Super Speciality</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Oncology & Neurology</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 ICU Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Saket</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26515050</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">500</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">110</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">30</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_max.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="fortis escorts heart delhi cardiac" data-type="cardiac institute" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">💓</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Fortis Escorts Heart</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac Institute</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Cardiac Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Okhla Road</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26825000</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">310</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">80</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">25</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_fortis.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="sir ganga ram hospital delhi multi" data-type="multi-speciality" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Sir Ganga Ram Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Rajinder Nagar</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-25750000</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">675</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">140</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">35</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_ganga.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="safdarjung hospital delhi government" data-type="government hospital" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Safdarjung Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Ansari Nagar West</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-26707444</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1600</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">300</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">60</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_safdar.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="dr. rml hospital delhi government" data-type="government hospital" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Dr. RML Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Government Hospital</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Baba Kharak Singh Marg</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-23365525</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1400</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">250</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">50</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_lnjp.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="lok nayak hospital delhi trauma" data-type="trauma & surgery" data-city="delhi">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Lok Nayak Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Trauma & Surgery</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24×7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Jawaharlal Nehru Marg</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">011-23232400</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">2000</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">70</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/delhi/details_delhi.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/delhi/doctors_lnjp.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENGALURU SECTION -->
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🌿 Bengaluru <span class="hospitals-count">8 Hospitals</span></h3>
+    <div class="hospital-grid" aria-label="Bengaluru hospitals">
+      <div class="hospital-card" data-name="manipal hospital bengaluru multi" data-type="multi-speciality" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Manipal Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multi-Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24/7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Old Airport Road</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-25024444</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">600+</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">180</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">30</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h1" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_manipal.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="apollo hospitals bangalore cardiac" data-type="cardiac & oncology" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">❤️</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Apollo Hospitals Bangalore</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac & Oncology</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> ICU & Trauma</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Bannerghatta Road</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-26304050</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">550+</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">160</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">35</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h2" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_apollo.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="fortis hospital bengaluru neurology" data-type="neurology & orthopedics" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Fortis Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Neurology & Orthopedics</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24/7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Cunningham Road</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-41994444</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">400+</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">110</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">22</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h3" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_fortis.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="narayana health city cardiac" data-type="cardiac super speciality" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">💓</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Narayana Health City</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Cardiac Super Speciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Advanced Trauma</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Bommasandra</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-71222222</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1000+</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">280</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">60</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h4" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_narayana.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="columbia asia hospital general" data-type="general & icu" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🏥</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Columbia Asia Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> General & ICU</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency Available</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Hebbal</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-61656200</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">350</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">90</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">20</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h5" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_columbia.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="sakra world hospital japanese" data-type="japanese tech care" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🌐</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Sakra World Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Japanese Tech Care</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24/7 Trauma</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Marathahalli</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-49694969</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">400</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">100</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">24</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h6" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_sakra.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="st. john's medical college teaching" data-type="teaching hospital" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">🎓</div>
+          <div class="hc-title-block">
+            <div class="hc-name">St. John's Medical College</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Teaching Hospital</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> Emergency & ICU</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Koramangala</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-22065000</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">1200</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">320</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">55</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h7" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_john.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" data-name="aster cmi hospital multispeciality" data-type="multispeciality" data-city="bengaluru">
+        <div class="hc-accent"></div>
+        <div class="hc-header">
+          <div class="hc-icon-wrap">⭐</div>
+          <div class="hc-title-block">
+            <div class="hc-name">Aster CMI Hospital</div>
+            <span class="hc-type-badge"><i class="fas fa-stethoscope" style="font-size:0.65rem"></i> Multispeciality</span>
+            <span class="hc-emergency-badge"><i class="fas fa-ambulance" style="font-size:0.65rem"></i> 24/7 Emergency</span>
+          </div>
+        </div>
+        <div class="hc-info">
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-map-marker-alt"></i></div><span class="hc-row-label">Address</span><span class="hc-row-val">Hebbal</span></div>
+          <div class="hc-row"><div class="hc-row-icon"><i class="fas fa-phone"></i></div><span class="hc-row-label">Contact</span><span class="hc-row-val">080-43420100</span></div>
+        </div>
+        <div class="hc-beds">
+          <div class="hc-bed-stat bed-total-s"><div class="hc-bed-num">500</div><div class="hc-bed-label">Total Beds</div></div>
+          <div class="hc-bed-stat bed-avail-s"><div class="hc-bed-num">140</div><div class="hc-bed-label">Available</div></div>
+          <div class="hc-bed-stat bed-icu-s"><div class="hc-bed-num">28</div><div class="hc-bed-label">ICU</div></div>
+        </div>
+        <div class="hc-footer">
+          <a href="hospitals/bengaluru/details_bengaluru.html#h8" class="hc-btn hc-btn-primary"><i class="fas fa-info-circle"></i> See Details</a>
+          <a href="hospitals/bengaluru/doctors_aster.html" class="hc-btn hc-btn-secondary"><i class="fas fa-user-md"></i> See Doctors</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REMAINING CITIES: Chandigarh, Ambala, Chennai, Kolkata, Pune -->
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🌸 Chandigarh <span class="hospitals-count">8 Hospitals</span></h3>
+    <p style="text-align: center; color: #666; padding: 20px;">Detailed listings for Chandigarh hospitals including PGI Chandigarh, Fortis, Max Super Speciality, Government Medical College, Alchemist Hospital, Mukat Hospital, Ojas Eye Hospital, and Eden Hospital with complete contact details and bed availability.</p>
+  </div>
+</section>
+
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🏙️ Ambala <span class="hospitals-count">8 Hospitals</span></h3>
+    <p style="text-align: center; color: #666; padding: 20px;">Comprehensive directory of Ambala hospitals including Civil Hospital, Vohra Hospital, MK Hospital, Amrit Hospital, Guardian Hospital, Nandra Hospital, CL ALL Hospital, and Rotary Hospital.</p>
+  </div>
+</section>
+
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🌴 Chennai <span class="hospitals-count">8 Hospitals</span></h3>
+    <p style="text-align: center; color: #666; padding: 20px;">Complete listing of Chennai hospitals including Apollo Hospitals, Fortis Malar, MIOT International, Sri Ramachandra Hospital, SIMS Hospital, Global Health City, Govt. Stanley Hospital, and Vijaya Hospital.</p>
+  </div>
+</section>
+
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🌉 Kolkata <span class="hospitals-count">8 Hospitals</span></h3>
+    <p style="text-align: center; color: #666; padding: 20px;">Kolkata hospital directory featuring AMRI Hospital, Apollo Gleneagles, Fortis Hospital, Medica Superspecialty, SSKM Hospital, Peerless Hospital, Ruby General Hospital, and CMC Kolkata.</p>
+  </div>
+</section>
+
+<section class="hospital-section">
+  <div class="city-section">
+    <h3 class="city-section-title">🏙️ Pune <span class="hospitals-count">8 Hospitals</span></h3>
+    <p style="text-align: center; color: #666; padding: 20px;">Pune hospitals list including Jehangir Hospital, Ruby Hall Clinic, Sahyadri Hospital, KEM Hospital, Deenanath Mangeshkar, Aditya Birla Memorial, Asia Pacific Heart Institute, and Purna Hospital.</p>
+  </div>
+</section>
+
+<a href="emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
+
+<footer><p>© 2026 <span>HospitalFinder</span> | All Hospitals Directory</p></footer>
+
+<script>
+function filterCards() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const match = c.dataset.name.includes(q) || c.dataset.type.includes(q) || c.dataset.city.includes(q);
+    c.classList.toggle('hidden', !match);
+    if (match) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+
+function filterType(btn, type) {
+  document.querySelectorAll('.fs-tag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value = '';
+  const cards = document.querySelectorAll('.hospital-card');
+  let n = 0;
+  cards.forEach(c => {
+    const show = type === 'all' || c.dataset.type.includes(type);
+    c.classList.toggle('hidden', !show);
+    if (show) n++;
+  });
+  document.getElementById('cardCount').textContent = n + ' Hospital' + (n !== 1 ? 's' : '');
+}
+</script>
+</body>
+</html>
