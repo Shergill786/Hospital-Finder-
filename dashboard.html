@@ -6,14 +6,10 @@
   <link rel="stylesheet" href="css/shared.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <link rel="stylesheet" href="css/dashboard.css"/>    
-  <script src="javascript/dashboard.js"></script>
-
- <link rel="stylesheet" href="css/dashboard.css"/>
+  <link rel="stylesheet" href="css/dashboard.css"/>
 
 </head>
 <body>
-  <script src="javascript/dashboard.js"></script>
 
 <header>
   <nav>
@@ -23,7 +19,7 @@
     </div>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="hospitals/delhi.html">Hospitals</a></li>
+      <li><a href="all_hospitals.html">Hospitals</a></li>
       <li><a href="emergency.html" class="nav-emg">🚨 Emergency</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:10px;">
@@ -38,8 +34,8 @@
   <aside class="sidebar" id="sidebar">
     <div class="sb-user">
       <div class="sb-avatar" id="sb-avatar">👤</div>
-      <div class="sb-name" id="sb-name">Shergill</div>
-      <div class="sb-email" id="sb-email">jaskiratsingh@gmail.com</div>
+      <div class="sb-name" id="sb-name"></div>
+      <div class="sb-email" id="sb-email"></div>
       <div class="sb-score-bar"><div class="sb-score-label">Health Score</div><div class="sb-score-num">84/100</div></div>
     </div>
 
@@ -51,7 +47,7 @@
       </button>
     </a>
     
-    <a href="hospitals.html">
+    <a href="all_hospitals.html">
       <button class="sb-link" onclick="showSection('hospitals',this)">
         <div class="sb-icon">🏥</div> Find Hospitals
       </button>
@@ -149,7 +145,7 @@
           <div class="card-hd"><div class="card-title">⚡ Quick Actions</div></div>
           <div class="card-bd">
             <div class="quick-grid">
-              <a href="hospitals.html" class="qc" onclick="showSection('hospitals',document.querySelectorAll('.sb-link')[1])">
+              <a href="all_hospitals.html" class="qc" onclick="showSection('hospitals',document.querySelectorAll('.sb-link')[1])">
                 <div class="qc-icon">🏥</div>
                 <div>
                   <div class="qc-label">Find Hospital</div>
@@ -297,5 +293,6 @@
 <div id="toast">✅ Done!</div>
 <a href="emergency.html" class="floating-emergency"><i class="fas fa-ambulance"></i> Emergency</a>
 
+<script src="javascript/dashboard.js"></script>
 </body>
 </html>

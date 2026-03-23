@@ -8,7 +8,7 @@ if(user.name){
   document.getElementById('sb-email').textContent=user.email||'';
   document.getElementById('nav-user-name').textContent=user.name.split(' ')[0];
   const hour=new Date().getHours();
-  const greet=hour<12?'Good Morning':'hour<17?'Good Afternoon':'Good Evening';
+  const greet=hour<12?'Good Morning':hour<17?'Good Afternoon':'Good Evening';
   document.getElementById('greet-name').textContent=(hour<12?'Good Morning':hour<17?'Good Afternoon':'Good Evening')+', '+user.name.split(' ')[0]+'! 👋';
 }
 document.getElementById('tracker-date').textContent=new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});

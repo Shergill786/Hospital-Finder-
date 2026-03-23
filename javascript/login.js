@@ -16,7 +16,7 @@ function switchTab(id,btn){
       const nameFromEmail=email.split('@')[0].charAt(0).toUpperCase()+email.split('@')[0].slice(1);
       // Save user to sessionStorage
       sessionStorage.setItem('hf_user',JSON.stringify({name:nameFromEmail,email:email,loggedIn:true}));
-      window.location.href='dashboard.html';
+      window.location.href='home.html';
     },1200);
   }
   function doRegister(){
