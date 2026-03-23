@@ -29,167 +29,52 @@
 </header>
 
 <!-- ══ FEATURES ══ -->
-    <section id="features" style="padding:72px 1.5rem;
-      background:white;
-      text-align:center;">
+    <section id="features">
       <p class="section-label">What You Can Do</p>
       <h2 class="section-title">Everything In One Place</h2>
       <p class="section-sub">After signing in, your personal health hub is ready — appointments, vitals, reminders and more.</p>
-      <div style="display:grid;
-        grid-template-columns:repeat(3,1fr);
-        gap:20px;
-        max-width:1100px;
-        margin:48px auto 0;">
-        <a href="all_hospitals.html" style="display:block;
-          background:#f8fafc;
-          border:2px solid #e2e8f0;
-          border-radius:18px;
-          padding:28px;
-          text-align:left;
-          transition:all 0.3s;
-          text-decoration:none;
-          color:inherit;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#1d4ed8';this.style.boxShadow='0 16px 48px rgba(29,78,216,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='#e2e8f0';this.style.boxShadow='none'">
-          <div style="width:52px;
-            height:52px;
-            border-radius:14px;
-            background:#eff6ff;
-            display:grid;
-            place-items:center;
-            font-size:1.5rem;
-            margin-bottom:16px;">🏥</div>
-          <div style="font-family:'Syne',sans-serif;
-            font-weight:800;
-            font-size:1rem;
-            margin-bottom:8px;">Find Hospitals</div>
-          <div style="font-size:0.85rem;
-            color:#64748b;
-            line-height:1.6;">Search hospitals across 8 cities with real-time bed availability and emergency info.</div>
+      <div class="feature-grid">
+        <a href="all_hospitals.html" class="feature-box">
+          <div class="feature-icon-wrap">🏥</div>
+          <div class="feature-content">
+            <h4>Find Hospitals</h4>
+            <p>Search hospitals across 8 cities with real-time bed availability and emergency info.</p>
+          </div>
         </a>
-        <a href="appointments.html" style="display:block;
-          background:#f8fafc;
-          border:2px solid #e2e8f0;
-          border-radius:18px;
-          padding:28px;
-          text-align:left;
-          transition:all 0.3s;
-          text-decoration:none;
-          color:inherit;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#1d4ed8';this.style.boxShadow='0 16px 48px rgba(29,78,216,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='#e2e8f0';this.style.boxShadow='none'">
-          <div style="width:52px;
-            height:52px;
-            border-radius:14px;
-            background:#eff6ff;
-            display:grid;
-            place-items:center;
-            font-size:1.5rem;
-            margin-bottom:16px;">📅</div>
-          <div style="font-family:'Syne',sans-serif;
-            font-weight:800;
-            font-size:1rem;
-            margin-bottom:8px;">Book Appointments</div>
-          <div style="font-size:0.85rem;
-            color:#64748b;
-            line-height:1.6;">Browse verified doctors by specialty and book your slot with ease.</div>
+        <a href="appointments.html" class="feature-box">
+          <div class="feature-icon-wrap">📅</div>
+          <div class="feature-content">
+            <h4>Book Appointments</h4>
+            <p>Browse verified doctors by specialty and book your slot with ease.</p>
+          </div>
         </a>
-        <a href="health_tracker.html" style="display:block;
-          background:#f8fafc;
-          border:2px solid #e2e8f0;
-          border-radius:18px;
-          padding:28px;
-          text-align:left;
-          transition:all 0.3s;
-          text-decoration:none;
-          color:inherit;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#1d4ed8';this.style.boxShadow='0 16px 48px rgba(29,78,216,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='#e2e8f0';this.style.boxShadow='none'">
-          <div style="width:52px;
-            height:52px;
-            border-radius:14px;
-            background:#eff6ff;
-            display:grid;
-            place-items:center;
-            font-size:1.5rem;
-            margin-bottom:16px;">💗</div>
-          <div style="font-family:'Syne',sans-serif;
-            font-weight:800;
-            font-size:1rem;
-            margin-bottom:8px;">Track Health</div>
-          <div style="font-size:0.85rem;
-            color:#64748b;
-            line-height:1.6;">Log heart rate, blood pressure, SpO2 and more. Monitor trends over time.</div>
+        <a href="health_tracker.html" class="feature-box">
+          <div class="feature-icon-wrap">💗</div>
+          <div class="feature-content">
+            <h4>Track Health</h4>
+            <p>Log heart rate, blood pressure, SpO2 and more. Monitor trends over time.</p>
+          </div>
         </a>
-        <a href="reminders.html" style="display:block;
-          background:#f8fafc;
-          border:2px solid #e2e8f0;
-          border-radius:18px;
-          padding:28px;
-          text-align:left;
-          transition:all 0.3s;
-          text-decoration:none;
-          color:inherit;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#1d4ed8';this.style.boxShadow='0 16px 48px rgba(29,78,216,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='#e2e8f0';this.style.boxShadow='none'">
-          <div style="width:52px;
-            height:52px;
-            border-radius:14px;
-            background:#eff6ff;
-            display:grid;
-            place-items:center;
-            font-size:1.5rem;
-            margin-bottom:16px;">💊</div>
-          <div style="font-family:'Syne',sans-serif;
-            font-weight:800;
-            font-size:1rem;
-            margin-bottom:8px;">Medicine Reminders</div>
-          <div style="font-size:0.85rem;
-            color:#64748b;
-            line-height:1.6;">Never miss a dose. Set smart reminders with custom schedules and dosages.</div>
+        <a href="reminders.html" class="feature-box">
+          <div class="feature-icon-wrap">💊</div>
+          <div class="feature-content">
+            <h4>Medicine Reminders</h4>
+            <p>Never miss a dose. Set smart reminders with custom schedules and dosages.</p>
+          </div>
         </a>
-        <a href="emergency.html" style="display:block;
-          background:#fef2f2;
-          border:2px solid #fecaca;
-          border-radius:18px;
-          padding:28px;
-          text-align:left;
-          transition:all 0.3s;
-          text-decoration:none;
-          color:inherit;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 16px 48px rgba(220,38,38,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='none'">
-          <div style="width:52px;
-            height:52px;
-            border-radius:14px;
-            background:#fee2e2;
-            display:grid;
-            place-items:center;
-            font-size:1.5rem;
-            margin-bottom:16px;">🚨</div>
-          <div style="font-family:'Syne',sans-serif;
-            font-weight:800;
-            font-size:1rem;
-            margin-bottom:8px;
-            color:#dc2626;">Emergency Access</div>
-          <div style="font-size:0.85rem;
-            color:#64748b;
-            line-height:1.6;">Instant access to emergency helplines, ambulance numbers and first aid guides.</div>
+        <a href="emergency.html" class="feature-box feature-box-emergency">
+          <div class="feature-icon-wrap">🚨</div>
+          <div class="feature-content">
+            <h4>Emergency Access</h4>
+            <p>Instant access to emergency helplines, ambulance numbers and first aid guides.</p>
+          </div>
         </a>
-        <a href="dashboard.html" style="display:block;
-          background:#f8fafc;
-          border:2px solid #e2e8f0;
-          border-radius:18px;
-          padding:28px;
-          text-align:left;
-          transition:all 0.3s;
-          text-decoration:none;
-          color:inherit;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='#1d4ed8';this.style.boxShadow='0 16px 48px rgba(29,78,216,0.14)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='#e2e8f0';this.style.boxShadow='none'">
-          <div style="width:52px;
-            height:52px;
-            border-radius:14px;
-            background:#eff6ff;
-            display:grid;
-            place-items:center;
-            font-size:1.5rem;
-            margin-bottom:16px;">👤</div>
-          <div style="font-family:'Syne',sans-serif;
-            font-weight:800;
-            font-size:1rem;
-            margin-bottom:8px;">Personal Dashboard</div>
-          <div style="font-size:0.85rem;
-            color:#64748b;
-            line-height:1.6;">Your health hub — appointments, vitals, reminders and records in one view.</div>
+        <a href="dashboard.html" class="feature-box">
+          <div class="feature-icon-wrap">👤</div>
+          <div class="feature-content">
+            <h4>Personal Dashboard</h4>
+            <p>Your health hub — appointments, vitals, reminders and records in one view.</p>
+          </div>
         </a>
       </div>
     </section>

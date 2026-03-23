@@ -5,13 +5,18 @@ function switchTab(id,btn){
     document.getElementById('tab-'+id).classList.add('active');
   }
   function doLogin(){
+    const email=document.getElementById('li-email').value.trim();
+    const password=document.getElementById('li-pass').value.trim();
+    if(!email||!password){alert('Please fill all required fields.');return;}
     const btn=document.getElementById('login-btn');
     btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Signing in...';
     btn.disabled=true;
     setTimeout(()=>{
+      // Extract name from email (capitalize first letter)
+      const nameFromEmail=email.split('@')[0].charAt(0).toUpperCase()+email.split('@')[0].slice(1);
       // Save user to sessionStorage
-      sessionStorage.setItem('hf_user',JSON.stringify({name:'Arjun Verma',email:'arjun@email.com',loggedIn:true}));
-      window.location.href='home.html';
+      sessionStorage.setItem('hf_user',JSON.stringify({name:nameFromEmail,email:email,loggedIn:true}));
+      window.location.href='dashboard.html';
     },1200);
   }
   function doRegister(){
