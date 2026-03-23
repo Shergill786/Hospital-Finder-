@@ -38,7 +38,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sb-user">
       <div class="sb-avatar" id="sb-avatar">👤</div>
-      <div class="sb-name" id="sb-name">Loading...</div>
+      <div class="sb-name" id="sb-name"></div>
       <div class="sb-email" id="sb-email">...</div>
       <div class="sb-score-bar"><div class="sb-score-label">Health Score</div><div class="sb-score-num">84/100</div></div>
     </div>
@@ -94,7 +94,7 @@
           <div class="greet-sub">You have 2 upcoming appointments and 3 medicine reminders today.</div>
         </div>
         <div class="greet-btns">
-          <button class="gb gb-white" onclick="showSection('appointments',document.querySelectorAll('.sb-link')[2])">📅 Book Appointment</button>
+          <a href="appointments.html"><button class="gb gb-white" onclick="showSection('appointments',document.querySelectorAll('.sb-link')[2])">📅 Book Appointment</button></a>
           <a href="emergency.html" class="gb gb-outline">🚨 Emergency</a>
         </div>
       </div>
