@@ -11,7 +11,7 @@ function switchTab(id,btn){
     setTimeout(()=>{
       // Save user to sessionStorage
       sessionStorage.setItem('hf_user',JSON.stringify({name:'Arjun Verma',email:'arjun@email.com',loggedIn:true}));
-      window.location.href='dashboard.html';
+      window.location.href='home.html';
     },1200);
   }
   function doRegister(){
