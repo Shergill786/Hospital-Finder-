@@ -25,7 +25,13 @@
       <li><a href="dashboard.html">Dashboard</a></li>
       <li><a href="emergency.html" class="nav-emergency">🚨 Emergency</a></li>
     </ul>
+    
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span id="nav-user-name" style="font-size:0.85rem;font-weight:600;color:var(--muted);"></span>
+      <button onclick="logout()" style="background:none;border:1.5px solid var(--border);color:var(--muted);padding:7px 14px;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--t);" onmouseover="this.style.borderColor='var(--red)';this.style.color='var(--red)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Logout</button>
+    </div>
   </nav>
+
 </header>
 
 <!-- HERO -->
@@ -129,7 +135,7 @@
       </div>
     </a>
 
-    <a href="#" class="feature-box">
+    <a href="appointments.html" class="feature-box">
       <div class="feature-icon-wrap">📅</div>
       <div class="feature-content">
         <h4>Book Appointment</h4>
@@ -201,6 +207,16 @@
 
 <!-- SCRIPT -->
 <script>
+// ── LOAD USER INFO FROM SESSION ──
+const user = JSON.parse(sessionStorage.getItem('hf_user') || '{}');
+if(user.name){
+  document.getElementById('nav-user-name').textContent=user.name.split(' ')[0];
+}
+
+// ── LOGOUT ──
+function logout(){sessionStorage.removeItem('hf_user');window.location.href='login.html';}
+
+// ── GO TO CITY ──
 function goToCity() {
   const city = document.getElementById("citySelect").value;
   if (city) {
@@ -213,4 +229,3 @@ function goToCity() {
 
 </body>
 </html>
-```

@@ -14,7 +14,7 @@
 <!-- ══ HEADER ══ -->
 <header role="banner">
   <nav role="navigation" aria-label="Main navigation">
-    <div class="logo ">
+    <div class="logo">
       <div class="logo-icon">🏥</div>
       Hospital<span>Finder</span>
     </div>
@@ -24,12 +24,26 @@
       <li><a href="#cities">Cities</a></li>
       <li><a href="emergency.html" class="nav-emergency">🚨 Emergency</a></li>
     </ul>
-    
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span id="nav-user-name" style="font-size:0.85rem;font-weight:600;color:var(--muted);"></span>
+      <button onclick="logout()" style="background:none;border:1.5px solid var(--border);color:var(--muted);padding:7px 14px;border-radius:8px;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:all var(--t);" onmouseover="this.style.borderColor='var(--red)';this.style.color='var(--red)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">Logout</button>
+    </div>
   </nav>
+  
 </header>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sb-user">
+    <div class="sb-avatar" id="sb-avatar">👤</div>
+    <div class="sb-name" id="sb-name">Guest</div>
+    <div class="sb-email" id="sb-email"></div>
+    <div class="sb-score-bar"><div class="sb-score-label">Health Score</div><div class="sb-score-num">84/100</div></div>
+  </div>
+</aside>
+
 <!-- ══ FEATURES ══ -->
 <section id="features">
-  <div class="container"> <!-- ✅ ADDED -->
+  <div class="container">
     <p class="section-label">What You Can Do</p>
     <h2 class="section-title">Everything In One Place</h2>
     <p class="section-sub">
@@ -42,6 +56,15 @@
         <div class="feature-content">
           <h4>Find Hospitals</h4>
           <p>Search hospitals across 8 cities with real-time bed availability and emergency info.</p>
+        </div>
+      </a>
+
+      
+      <a href="dashboard.html" class="feature-box">
+        <div class="feature-icon-wrap">👤</div>
+        <div class="feature-content">
+          <h4>Personal Dashboard</h4>
+          <p>Your health hub — appointments, vitals, reminders and records in one view.</p>
         </div>
       </a>
 
@@ -61,14 +84,6 @@
         </div>
       </a>
 
-      <a href="reminders.html" class="feature-box">
-        <div class="feature-icon-wrap">💊</div>
-        <div class="feature-content">
-          <h4>Medicine Reminders</h4>
-          <p>Never miss a dose. Set smart reminders with custom schedules and dosages.</p>
-        </div>
-      </a>
-
       <a href="emergency.html" class="feature-box feature-box-emergency">
         <div class="feature-icon-wrap">🚨</div>
         <div class="feature-content">
@@ -77,11 +92,11 @@
         </div>
       </a>
 
-      <a href="dashboard.html" class="feature-box">
-        <div class="feature-icon-wrap">👤</div>
+      <a href="reminders.html" class="feature-box">
+        <div class="feature-icon-wrap">💊</div>
         <div class="feature-content">
-          <h4>Personal Dashboard</h4>
-          <p>Your health hub — appointments, vitals, reminders and records in one view.</p>
+          <h4>Medicine Reminders</h4>
+          <p>Never miss a dose. Set smart reminders with custom schedules and dosages.</p>
         </div>
       </a>
     </div>
@@ -90,7 +105,7 @@
 
 <!-- ══ CITIES ══ -->
 <section id="cities" class="cities-section">
-  <div class="container"> <!-- ✅ ADDED -->
+  <div class="container"> 
     <p class="section-label">Browse by City</p>
     <h2 class="section-title">Select Your Location</h2>
     <p class="section-sub">Click any city to explore hospitals in that area.</p>
@@ -146,3 +161,16 @@
     </div>
   </div>
 </section>
+
+<script>
+// ── LOAD USER INFO FROM SESSION ──
+const user = JSON.parse(sessionStorage.getItem('hf_user') || '{}');
+if(user.name){
+  document.getElementById('sb-name').textContent=user.name;
+  document.getElementById('sb-email').textContent=user.email||'';
+  document.getElementById('nav-user-name').textContent=user.name.split(' ')[0];
+}
+
+// ── LOGOUT ──
+function logout(){sessionStorage.removeItem('hf_user');window.location.href='login.html';}
+</script>
