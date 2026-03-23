@@ -1,5 +1,4 @@
 
-<script>
 // ── AUTH CHECK ──
 const user = JSON.parse(sessionStorage.getItem('hf_user') || '{}');
 if(!user.loggedIn) window.location.href='login.html';
@@ -119,4 +118,3 @@ function saveVitals(){
 // ── MOBILE MENU BUTTON ──
 if(window.innerWidth<768)document.getElementById('menu-toggle').style.display='block';
 window.addEventListener('resize',()=>{document.getElementById('menu-toggle').style.display=window.innerWidth<768?'block':'none';});
-</script>
