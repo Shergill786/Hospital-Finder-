@@ -103,7 +103,7 @@
       <div class="grid-2">
         <!-- APPOINTMENTS WIDGET -->
         <div class="card">
-          <div class="card-hd"><div class="card-title">📅 Upcoming Appointments</div><button class="card-act" onclick="showSection('appointments',document.querySelectorAll('.sb-link')[2])">+ Book New</button></div>
+          <div class="card-hd"><div class="card-title">📅 Upcoming Appointments</div><a href="appointments.html" class="card-act" onclick="showSection('appointments',document.querySelectorAll('.sb-link')[2])">+ Book New</a></div>
           <div class="card-bd">
             <div class="appt-item"><div class="ai-icon">❤️</div><div style="flex:1"><div class="ai-name">Dr. Rajiv Narang – Cardiology</div><div class="ai-time">Tomorrow, 10:30 AM · AIIMS Delhi</div></div><span class="badge badge-g">Confirmed</span></div>
             <div class="appt-item"><div class="ai-icon">🧠</div><div style="flex:1"><div class="ai-name">Dr. Manjari Tripathi – Neurology</div><div class="ai-time">Fri Mar 28, 2:00 PM · AIIMS Delhi</div></div><span class="badge badge-y">Pending</span></div>
@@ -112,7 +112,7 @@
         </div>
         <!-- VITALS WIDGET -->
         <div class="card">
-          <div class="card-hd"><div class="card-title">💗 Today's Vitals</div><button class="card-act" onclick="showSection('tracker',document.querySelectorAll('.sb-link')[3])">Log Now →</button></div>
+          <div class="card-hd"><div class="card-title">💗 Today's Vitals</div><a href="health_tracker.html" class="card-act" onclick="showSection('tracker',document.querySelectorAll('.sb-link')[3])">Log Now →</a></div>
           <div class="card-bd">
             <div class="vitals-grid">
               <div class="vital-box"><div class="vb-icon">❤️</div><div class="vb-val">72 bpm</div><div class="vb-lbl">Heart Rate</div><div class="vb-bar"><div class="vb-fill" style="width:60%"></div></div></div>
@@ -143,10 +143,29 @@
           <div class="card-hd"><div class="card-title">⚡ Quick Actions</div></div>
           <div class="card-bd">
             <div class="quick-grid">
-              <button class="qc" onclick="showSection('hospitals',document.querySelectorAll('.sb-link')[1])"><div class="qc-icon">🏥</div><div><div class="qc-label">Find Hospital</div><div class="qc-sub">Search by city</div></div></button>
-              <button class="qc" onclick="showSection('appointments',document.querySelectorAll('.sb-link')[2])"><div class="qc-icon" style="background:var(--green)">📅</div><div><div class="qc-label">Book Appointment</div><div class="qc-sub">Schedule a visit</div></div></button>
-              <button class="qc" onclick="showSection('tracker',document.querySelectorAll('.sb-link')[3])"><div class="qc-icon" style="background:var(--purple)">💗</div><div><div class="qc-label">Log Vitals</div><div class="qc-sub">Track health</div></div></button>
-              <a href="emergency.html" class="qc" style="border-color:rgba(220,38,38,0.2)"><div class="qc-icon" style="background:var(--red)">🚨</div><div><div class="qc-label">Emergency</div><div class="qc-sub">Get help now</div></div></a>
+              <a href="hospitals.html" class="qc" onclick="showSection('hospitals',document.querySelectorAll('.sb-link')[1])">
+                <div class="qc-icon">🏥</div>
+                <div>
+                  <div class="qc-label">Find Hospital</div>
+                  <div class="qc-sub">Search by city</div>
+                </div>
+              </a>
+              
+              <a href="appointments.html" class="qc" onclick="showSection('appointments',document.querySelectorAll('.sb-link')[2])">
+                <div class="qc-icon" style="background:var(--green)">📅</div>
+                <div>
+                  <div class="qc-label">Book Appointment</div>
+                  <div class="qc-sub">Schedule a visit</div>
+                </div>
+              </a>
+              
+              <a href="health_tracker.html" class="qc" onclick="showSection('tracker',document.querySelectorAll('.sb-link')[3])">
+                <div class="qc-icon" style="background:var(--purple)">💗</div>
+                <div>
+                  <div class="qc-label">Log Vitals</div>
+                  <div class="qc-sub">Track health</div>
+                </div>
+              </a><a href="emergency.html" class="qc" style="border-color:rgba(220,38,38,0.2)"><div class="qc-icon" style="background:var(--red)">🚨</div><div><div class="qc-label">Emergency</div><div class="qc-sub">Get help now</div></div></a>
             </div>
           </div>
         </div>
