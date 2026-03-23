@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
 
+/* ===================== CSS VARIABLES ===================== */
 :root {
   --blue:#1d4ed8; --blue-dark:#1e3a8a; --blue-light:#3b82f6; --blue-pale:#eff6ff;
   --red:#dc2626; --green:#16a34a; --yellow:#f59e0b; --orange:#ea580c;
