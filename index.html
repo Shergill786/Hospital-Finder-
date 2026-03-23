@@ -18,52 +18,47 @@
       <div class="logo-icon">🏥</div>
       Hospital<span>Finder</span>
     </div>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#cities">Cities</a></li>
-      <!-- <li><a href="emergency.html" class="nav-emergency">🚨 Emergency</a></li> -->
-    </ul>
-    <div style="display:flex;
-      gap:10px;
-      align-items:center;">
-      <a href="login.html" style="color:var(--blue);
-      font-weight:600;
-      font-size:0.9rem;
-      padding:8px 16px;
-      border-radius:8px;
-      border:1.5px solid var(--blue);
-      transition:all 0.3s;" onmouseover="this.style.background='var(--blue-pale)'" onmouseout="this.style.background='transparent'">Sign In</a>
-      <a href="login.html" style="background:var(--blue);
-      color:white;
-      font-weight:700;
-      font-size:0.9rem;
-      padding:9px 20px;
-      border-radius:8px;
-      transition:all 0.3s;
-      box-shadow:0 4px 14px rgba(29,78,216,0.3);" onmouseover="this.style.background='var(--blue-dark)'" onmouseout="this.style.background='var(--blue)'">Get Started</a>
+    <div style="display: flex;
+      gap: 10px;
+      align-items: center;">
+      <a href="login.html" style="color: var(--blue);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--blue);
+      transition: all 0.3s;" onmouseover="this.style.background='var(--blue-pale)'" onmouseout="this.style.background='transparent'">Sign In</a>
+      <a href="login.html" style="background: var(--blue);
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 9px 20px;
+      border-radius: 8px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 14px rgba(29,78,216,0.3);" onmouseover="this.style.background='var(--blue-dark)'" onmouseout="this.style.background='var(--blue)'">Get Started</a>
     </div>
   </nav>
 </header>
 
 <!-- ══ HERO ══ -->
-<section class="hero" style="padding:90px 1.5rem 80px;
-  background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 55%,#3b82f6 100%);
-  color:white;
-  text-align:center;
-  position:relative;
-  overflow:hidden;">
-  <div style="position:absolute;
-    inset:0;
-    background:url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=0 0 60 60 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=%23fff fill-opacity=.04%3E%3Cpath d=M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%3E%3C/g%3E%3C/svg%3E');"></div>
-  <div style="position:relative;z-index:1;max-width:780px;margin:auto;">
+<section class="hero" style="padding: 90px 1.5rem 80px;
+  background: linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 55%,#3b82f6 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;">
+  <div style="position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=0 0 60 60 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=%23fff fill-opacity=.04%3E%3Cpath d=M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%3E%3C/g%3E%3C/svg%3E');">
+  </div>
+  <div style="position:relative;z-index:1;max-width:px;margin:auto;">
     <div style="display:inline-flex;
       align-items:center;
       gap:8px;
       background:rgba(255,255,255,0.15);
       border:1px solid rgba(255,255,255,0.25);
       border-radius:100px;
-      padding:6px 16px;
+      padding:2px 16px;
       font-size:0.82rem;
       font-weight:600;
       margin-bottom:24px;
@@ -80,7 +75,7 @@
       font-weight:800;
       line-height:1.1;
       letter-spacing:-1px;
-      margin-bottom:15px;">Find Hospitals. Book Doctors.<br/><span style="color:#fde68a;">Track Your Health.</span></h1>
+      margin-bottom:6px;">Find Hospitals. Book Doctors.<br/><span style="color:#fde68a;">Track Your Health.</span></h1>
     <p style="font-size:1.05rem;
       opacity:0.88;
       max-width:580px;
@@ -101,7 +96,7 @@
         border-radius:12px;
         box-shadow:0 8px 28px rgba(0,0,0,0.2);
         transition:all 0.3s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fas fa-sign-in-alt"></i> Get Started Free</a>
-      <a href="#cities" style="display:inline-flex;
+      <a href="all_hospitals.html" style="display:inline-flex;
         align-items:center;
         gap:10px;
         background:rgba(255,255,255,0.15);
@@ -144,127 +139,128 @@
 
 
 <!-- ══ EMERGENCY CTA ══ -->
-<section style="background:linear-gradient(135deg,#fef2f2,#fee2e2);
-  border-top:4px solid #dc2626;
-  border-bottom:4px solid #dc2626;
-  padding:56px 1.5rem;
-  text-align:center;">
-  <h2 style="font-family:'Syne',sans-serif;
-    font-size:2rem;
-    font-weight:800;
-    color:#dc2626;
-    margin-bottom:12px;">🚨 Medical Emergency?</h2>
-  <p style="color:#7f1d1d;
-    margin-bottom:28px;
-    max-width:480px;
-    margin-left:auto;
-    margin-right:auto;">Don't wait. Access emergency services and hospital helplines instantly.</p>
-  <a href="emergency.html" style="display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:#dc2626;
-    color:white;
-    font-weight:700;
-    font-size:1.05rem;
-    padding:16px 36px;
-    border-radius:12px;
-    box-shadow:0 8px 24px rgba(220,38,38,0.35);
-    animation:emergencyPulse 2s ease-in-out infinite;
-    text-decoration:none;"><i class="fas fa-ambulance"></i> Access Emergency Services</a>
+<section style="background: linear-gradient(135deg,#fef2f2,#fee2e2);
+  border-top: 4px solid #dc2626;
+  border-bottom: 4px solid #dc2626;
+  padding: 56px 1.5rem;
+  text-align: center;">
+  <h2 style="font-family: 'Syne',sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #dc2626;
+    margin-bottom: 12px;">🚨 Medical Emergency?</h2>
+  <p style="color: #7f1d1d;
+    margin-bottom: 28px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;">Don't wait. Access emergency services and hospital helplines instantly.</p>
+  <a href="emergency.html" style="display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #dc2626;
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 16px 36px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(220,38,38,0.35);
+    animation: emergencyPulse 2s ease-in-out infinite;
+    text-decoration: none;"><i class="fas fa-ambulance"></i> Access Emergency Services</a>
 </section>
 
 <!-- ══ FOOTER ══ -->
-<footer style="background:#0f172a;
-  color:#94a3b8;
-  padding:48px 2rem 24px;">
-  <div style="max-width:1200px;margin:auto;">
-    <div style="display:grid;
-      grid-template-columns:2fr 1fr 1fr 1fr;
-      gap:40px;
-      margin-bottom:32px;">
+<footer style="background: #0f172a;
+  color: #94a3b8;
+  padding: 48px 2rem 24px;">
+  <div style="max-width: 1200px;
+    margin: auto;">
+    <div style="display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;">
       <div>
-        <div style="display:flex;
-          align-items:center;
-          gap:10px;
-          font-family:'Syne',sans-serif;
-          font-weight:800;
-          font-size:1.2rem;
-          color:white;
-          margin-bottom:12px;"><div style="width:36px;
-          height:36px;
-          background:#1d4ed8;
-          border-radius:9px;
-          display:grid;
-          place-items:center;
-          font-size:1.1rem;">🏥</div>Hospital<span style="color:#3b82f6;">Finder</span></div>
-        <p style="font-size:0.88rem;
-          line-height:1.7;
-          max-width:260px;">India's trusted hospital locator — helping patients find the right care at the right time.</p>
+        <div style="display: flex;
+          align-items: center;
+          gap: 10px;
+          font-family: 'Syne',sans-serif;
+          font-weight: 800;
+          font-size: 1.2rem;
+          color: white;
+          margin-bottom: 12px;"><div style="width: 36px;
+          height: 36px;
+          background: #1d4ed8;
+          border-radius: 9px;
+          display: grid;
+          place-items: center;
+          font-size: 1.1rem;">🏥</div>Hospital<span style="color: #3b82f6;">Finder</span></div>
+        <p style="font-size: 0.88rem;
+          line-height: 1.7;
+          max-width: 260px;">India's trusted hospital locator — helping patients find the right care at the right time.</p>
       </div>
-      <div><h5 style="color:white;
-        font-weight:700;
-        font-size:0.9rem;
-        margin-bottom:14px;">Platform</h5><ul style="list-style:none;
-        display:flex;
-        flex-direction:column;
-        gap:8px;"><li><a href="login.html" style="color:#94a3b8;
-          font-size:0.85rem;
-          transition:color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Sign In / Register</a></li><li><a href="dashboard.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Dashboard</a></li><li><a href="health_tracker.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Health Tracker</a></li><li><a href="reminders.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Reminders</a></li></ul></div>
-      <div><h5 style="color:white;
-        font-weight:700;
-        font-size:0.9rem;
-        margin-bottom:14px;">Cities</h5><ul style="list-style:none;
-        display:flex;
-        flex-direction:column;
-        gap:8px;"><li><a href="hospitals/delhi.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Delhi</a></li><li><a href="hospitals/mumbai.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Mumbai</a></li><li><a href="hospitals/bengaluru.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Bengaluru</a></li><li><a href="hospitals/chandigarh.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Chandigarh</a></li></ul></div>
-      <div><h5 style="color:white;
-        font-weight:700;
-        font-size:0.9rem;
-        margin-bottom:14px;">Support</h5><ul style="list-style:none;
-        display:flex;
-        flex-direction:column;
-        gap:8px;"><li><a href="emergency.html" style="color:#f87171;
-          font-size:0.85rem;
-          font-weight:600;">🚨 Emergency</a></li><li><a href="contact_us.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Contact Us</a></li><li><a href="feedback.html" style="color:#94a3b8;
-          font-size:0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Feedback</a></li></ul></div>
+      <div><h5 style="color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 14px;">Platform</h5><ul style="list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;"><li><a href="login.html" style="color: #94a3b8;
+          font-size: 0.85rem;
+          transition: color 0.3s;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Sign In / Register</a></li><li><a href="dashboard.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Dashboard</a></li><li><a href="health_tracker.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Health Tracker</a></li><li><a href="reminders.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Reminders</a></li></ul></div>
+      <div><h5 style="color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 14px;">Cities</h5><ul style="list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;"><li><a href="hospitals/delhi.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Delhi</a></li><li><a href="hospitals/mumbai.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Mumbai</a></li><li><a href="hospitals/bengaluru.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Bengaluru</a></li><li><a href="hospitals/chandigarh.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Chandigarh</a></li></ul></div>
+      <div><h5 style="color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 14px;">Support</h5><ul style="list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;"><li><a href="emergency.html" style="color: #f87171;
+          font-size: 0.85rem;
+          font-weight: 600;">🚨 Emergency</a></li><li><a href="contact_us.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Contact Us</a></li><li><a href="feedback.html" style="color: #94a3b8;
+          font-size: 0.85rem;" onmouseover="this.style.color='#3b82f6'" onmouseout="this.style.color='#94a3b8'">Feedback</a></li></ul></div>
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.08);
-      padding-top:20px;
-      display:flex;
-      justify-content:space-between;
-      font-size:0.82rem;
-      flex-wrap:wrap;
-      gap:8px;">
+    <div style="border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      flex-wrap: wrap;
+      gap: 8px;">
       <p>© 2026 HospitalFinder. All rights reserved.</p>
-      <p style="color:#3b82f6;">Built for healthcare accessibility across India</p>
+      <p style="color: #3b82f6;">Built for healthcare accessibility across India</p>
     </div>
   </div>
 </footer>
 
-<a href="emergency.html" class="floating-emergency" style="position:fixed;
-  bottom:28px;
-  right:28px;
-  background:#dc2626;
-  color:white;
-  padding:13px 22px;
-  font-size:0.9rem;
-  font-weight:700;
-  text-decoration:none;
-  border-radius:50px;
-  box-shadow:0 8px 24px rgba(220,38,38,0.4);
-  z-index:1000;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  animation:floatPulse 1.8s ease-in-out infinite;">🚑 Emergency</a>
+<a href="emergency.html" class="floating-emergency" style="position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #dc2626;
+  color: white;
+  padding: 13px 22px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(220,38,38,0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: floatPulse 1.8s ease-in-out infinite;">🚑 Emergency</a>
 
 <style></style>
 <script src="index.js"></script>
